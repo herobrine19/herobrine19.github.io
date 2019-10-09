@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[linux服务器的screen简单使用]]></title>
+    <url>%2F2019%2F10%2F09%2Flinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84screen%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[远程连接服务器时，当你断开ssh窗口，当前的操作也会终止，这时候需要用到screen来保持当前窗口在后台运行。 Screen 常用指令 screen -S yourname -&gt; 新建一个叫yourname的sessionscreen -ls -&gt; 列出当前所有的sessionscreen -r yourname -&gt; 回到yourname这个sessionscreen -d yourname -&gt; 远程detach某个sessionscreen -X -S yourname -&gt; 关闭这个session Screen 常用操作 Ctrl-a d -&gt; detach，暂时离开当前session 关于Screen详细解析点此]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[MNIST数据集入门]]></title>
     <url>%2F2019%2F07%2F14%2FMNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%85%A5%E9%97%A8%2F</url>
     <content type="text"><![CDATA[引言相信很多深度学习的初学者都会触碰mnist数据集，tensorflow官方教程里也将这个数据集当做示例来供新手入门练手，但是其并没有详细讲解mnist的内部构造，下面就来介绍一下 简介MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片]]></content>
