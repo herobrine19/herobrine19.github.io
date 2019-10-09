@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[MNIST数据集入门]]></title>
+    <url>%2F2019%2F07%2F14%2FMNIST%E6%95%B0%E6%8D%AE%E9%9B%86%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[引言相信很多深度学习的初学者都会触碰mnist数据集，tensorflow官方教程里也将这个数据集当做示例来供新手入门练手，但是其并没有详细讲解mnist的内部构造，下面就来介绍一下 简介MNIST是一个入门级的计算机视觉数据集，它包含各种手写数字图片]]></content>
+      <categories>
+        <category>tensorflow</category>
+      </categories>
+      <tags>
+        <tag>mnist</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Minecraft开服教程]]></title>
+    <url>%2F2019%2F07%2F02%2FMinecraft%E5%BC%80%E6%9C%8D%E6%95%99%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[几点说明 本篇为我的世界服务端搭建的教程，简单来说就是教你如何开服，与小伙伴在同一个世界里玩耍。 当然，如果你的服务端搭建在远程vps上就可以远程联机，如果服务端只是在你本地运行的话那只有和你同属局域网的人才能联机。 Spigot 纯净服务端搭建我本人并不推荐官方的服务端，不能安装插件，优化也不怎么样，可以说，Spigot/Bukkit 是当前最稳定高效的纯净服务端了，并且其有强大的社区，各种各样的插件，可玩性是相当的高。下面就来说说该如何搭建 spigot 1.12.2 服务端。 首先要下载 spigot 1.12.2 服务端核心。这个服务端核心在官网是找不到的，你只能下载到构建工具，点此直接下载服务端核心 百度网盘提取码:cw2g。 新建一个文件夹，就取名叫 server 吧，然后把刚才下载的spigot-1.12.2.jar文件丢进去。 在 server 文件夹内新建一个文件，将其改名为 run.bat，用编辑器打开，复制这一段代码进去并保存： 12Java -jar -Xms1G -Xmx2G spigot-1.12.2.jar noguiPAUSE 其实这是个windows批处理文件，之后你双击这个文件就相当于在命令行输入了这些语句，这样开服就方便些，不需要每次都输命令那么麻烦。简单解释一下这些参数的含义吧： Java -jar 是指用java运行这个jar包，也就是后面那个spigot-1.12.2，就是服务端的核心； -Xms1G 运行服务器的最小内存，这里给了1G； -Xmx2G 运行服务器的最大内存，这里给了2G，当然你可以根据实际情况修改； nogui 指不启用gui，因为你服务端本来就没有gui； PAUSE 这行让你在关闭服务器之后不会立刻关闭命令行。 双击 run.bat 文件，会自动跳出了命令行，然后报错，这时关闭命令行，你会发现 server 文件夹里多出来一些东西，这时打开 eula.txt ,将 eula=false 改成 eula=true ，表示你同意mojang的eula协定。 再次双击 run.bat 文件，等待它生成一些配置文件和加载世界结束后，服务器就能正常运行了。 但这还没有结束，你会发现如果不用正版账号根本进不去服务器。所以要用编辑器打开 server.properties ，找到 online-mode=true 这一行，将其改为 online-mode=false ，意思就是关闭在线模式，这样用离线模式就能登录服务器了。 现在服务器已经搭建成功，接下来你要知道你的服务器地址，打开命令行，输入 ipconfig ，回车，查看你的ipv4地址，复制，然后打开游戏客户端，进入多人游戏，点击 添加服务器 按钮，在服务器地址框里粘贴刚才复制的ip，在后面加上端口号25565，中间要加上冒号”:”，这里要注意一定是英文的冒号，如果是中文冒号客户端就找不到服务器，之后点击 完成 按钮。 一切就绪，现在点击加入服务器按钮就可以进入游戏，同时你可以将服务器地址和端口号告诉别人和你一起联机，前提是要在一个内网下，不过一般高校的校园网内都是能联机的。]]></content>
+      <categories>
+        <category>Minecraft</category>
+        <category>Server</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Spigot 1.12.2 Tutorial 01 Spigot的前世今生]]></title>
+    <url>%2F2019%2F06%2F29%2FSpigot-1-12-2-Tutorial-01-Spigot%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>Minecraft</category>
+        <category>Spigot</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>Plugin</tag>
+        <tag>Spigot</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Minecraft 1.12.2 Mod Tutorial 02 你的第一个mod]]></title>
+    <url>%2F2019%2F06%2F27%2FMinecraft-1-12-2-Mod-Tutorial-02-%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAmod%2F</url>
+    <content type="text"><![CDATA[一、解读Example Mod二、构建并发布你的mod]]></content>
+      <categories>
+        <category>Minecraft</category>
+        <category>Forge</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>Mod</tag>
+        <tag>Forge</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F06%2F27%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Minecraft 1.12.2 Mod Tutorial 01 搭建开发环境]]></title>
+    <url>%2F2019%2F06%2F26%2FMinecraft-1-12-2-Mod-Tutorial-01-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%2F</url>
+    <content type="text"><![CDATA[一、安装Java既然要写mod，那么java必不可少，首先我们就来安装jdk (java development kit)。jdk可以去官网下载。下载完毕后一路下一步即可安装。 二、安装IntelliJ IDEA这里更推荐用IDEA来进行mod开发，原因就是非常好用并且IDEA有关于mc开发的插件。同样给出下载链接Intellij IDEA 官网下载。社区版即可，如果有教育邮箱可以免费使用付费版本，下载后按照流程安装即可。 三、搭建mod开发环境1.下载mdkmdk可以直接去Forge官网下载推荐的稳定版本Mdk 1.12.2-14.23.5.2768 2.解压mdk将下载好的Mdk解压到你的工程目录，然后我们用编辑器打开build.gradle文件，在最下面加上下面一段代码，目的是将构建的编码改为UTF-8。 123tasks.withType(JavaCompile)&#123; options.encoding = "UTF-8"&#125; 其他部分改不改都无所谓，不过你也可以自己研究研究这个文件的其他部分。 3.构建环境在当前目录打开命令行，输入这个命令 1gradlew setupDecompWorkspace idea 接下来就是漫长的等待，当出现 build successful 就是构建成功了。 4.在IDEA中运行项目]]></content>
+      <categories>
+        <category>Minecraft</category>
+        <category>Forge</category>
+      </categories>
+      <tags>
+        <tag>Minecraft</tag>
+        <tag>Mod</tag>
+        <tag>Forge</tag>
+      </tags>
+  </entry>
+</search>
