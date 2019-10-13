@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[postgresql入门]]></title>
+    <url>%2F2019%2F10%2F12%2Fpostgresql%E5%85%A5%E9%97%A8%2F</url>
+    <content type="text"><![CDATA[postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres； \l 显示所有数据库 alter table 表名 add (字段 字段类型) [ default &#39;输入默认值&#39;] [null/not null] ;举例：ALTER TABLE employee ADD spbh varchar(20) NOT NULL Default 0 备份数据库：在命令行输入pg_dump -h localhost -U postgres &quot;student&quot; &gt; &quot;d:\student.sql&quot;或者pg_dump -h localhost -U postgres -d student -f &quot;d:\ student.sql&quot; -h: 服务器地址； -U: 用户名; -d: 待备份数据库； -f: 输出文件名(或者目录) -F: 备份文件输出格式 (custom, directory,tar, plain text[默认]), -s: 只转储模式, 不包括数据 数据库还原：先使用SQL语句建立Student数据库，再利用备份的.sql文件进行还原。打开cmd.exe运行程序，切换到postgresql的bin目录下面（如果已经配置环境变量，不需要切换），使用以下命令进行还原：psql -h localhost -U postgres -d &quot;student&quot; &lt; &quot;d:\student.sql&quot;或者：pg_restore -h localhost -U postgres -d &quot;student&quot; &lt; &quot;d:\student.sql&quot; 修改表中数据update [表名] set [目标字段名]=[目标值] where [该行特征]]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[linux服务器的screen简单使用]]></title>
     <url>%2F2019%2F10%2F09%2Flinux%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84screen%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%2F</url>
     <content type="text"><![CDATA[远程连接服务器时，当你断开ssh窗口，当前的操作也会终止，这时候需要用到screen来保持当前窗口在后台运行。 Screen 常用指令 screen -S yourname -&gt; 新建一个叫yourname的sessionscreen -ls -&gt; 列出当前所有的sessionscreen -r yourname -&gt; 回到yourname这个sessionscreen -d yourname -&gt; 远程detach某个sessionscreen -X -S yourname -&gt; 关闭这个session Screen 常用操作 Ctrl-a d -&gt; detach，暂时离开当前session 关于Screen详细解析点此]]></content>
