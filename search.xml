@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[数据库知识点总结]]></title>
+    <url>%2F2019%2F10%2F21%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
+    <content type="text"><![CDATA[第六章 关系数据理论二、规范化 第一范式（1NF） 一个低一级范式的关系模式通过模式分解可以转化为若干个高一级范式的关系模式的集合，这种过程就叫规范化。 第二范式（2NF） 定义：若$R\in1NF$，且每一个非主属性完全函数依赖于任何一个候选码，则$R\in2NF$。 第三范式（3NF） 若$R\in3NF$，则每一个非主属性既不传递依赖于码，也不部分依赖于码。也就是说，可以证明如果$R\in3NF$，则必有$R\in2NF$。]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[postgresql入门]]></title>
     <url>%2F2019%2F10%2F12%2Fpostgresql%E5%85%A5%E9%97%A8%2F</url>
-    <content type="text"><![CDATA[postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres； \l 显示所有数据库 alter table 表名 add (字段 字段类型) [ default &#39;输入默认值&#39;] [null/not null] ;举例：ALTER TABLE employee ADD spbh varchar(20) NOT NULL Default 0 备份数据库：在命令行输入pg_dump -h localhost -U postgres &quot;student&quot; &gt; &quot;d:\student.sql&quot;或者pg_dump -h localhost -U postgres -d student -f &quot;d:\ student.sql&quot; -h: 服务器地址； -U: 用户名; -d: 待备份数据库； -f: 输出文件名(或者目录) -F: 备份文件输出格式 (custom, directory,tar, plain text[默认]), -s: 只转储模式, 不包括数据 数据库还原：先使用SQL语句建立Student数据库，再利用备份的.sql文件进行还原。打开cmd.exe运行程序，切换到postgresql的bin目录下面（如果已经配置环境变量，不需要切换），使用以下命令进行还原：psql -h localhost -U postgres -d &quot;student&quot; &lt; &quot;d:\student.sql&quot;或者：pg_restore -h localhost -U postgres -d &quot;student&quot; &lt; &quot;d:\student.sql&quot; 修改表中数据update [表名] set [目标字段名]=[目标值] where [该行特征]]]></content>
+    <content type="text"><![CDATA[postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres； 指令 功能 \l 显示所有数据库 \d 显示当前库中所有表 \d [表名] 显示该表内容 \q 断开与数据库的连接 \c - [user] 切换到用户user \c [库名] 进入该数据库 alter table 表名 add (字段 字段类型) [ default &#39;输入默认值&#39;] [null/not null] ;举例：ALTER TABLE employee ADD spbh varchar(20) NOT NULL Default 0 备份数据库：在命令行输入pg_dump -h localhost -U postgres &quot;student&quot; &gt; &quot;d:\student.sql&quot;或者pg_dump -h localhost -U postgres -d student -f &quot;d:\ student.sql&quot; -h: 服务器地址； -U: 用户名; -d: 待备份数据库； -f: 输出文件名(或者目录) -F: 备份文件输出格式 (custom, directory,tar, plain text[默认]), -s: 只转储模式, 不包括数据 数据库还原：先使用SQL语句建立Student数据库，再利用备份的.sql文件进行还原。打开cmd.exe运行程序，切换到postgresql的bin目录下面（如果已经配置环境变量，不需要切换），使用以下命令进行还原：psql -h localhost -U postgres -d &quot;student&quot; &lt; &quot;d:\student.sql&quot;或者：pg_restore -h localhost -U postgres -d &quot;student&quot; &lt; &quot;d:\student.sql&quot; 修改表中数据update [表名] set [目标字段名]=[目标值] where [该行特征]]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>postgresql</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[linux服务器的screen简单使用]]></title>

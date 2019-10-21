@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="postgresql,">
 
 
 
@@ -86,17 +86,18 @@
 
 
 
-<meta name="description" content="postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres；  \l 显示所有数据库  alter table  表名  add (字段  字段类型)  [ default  &amp;#39;输入默认值&amp;#39;]  [null/not null]  ;举例：ALTER TABLE employee  ADD  s">
+<meta name="description" content="postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres；     指令 功能    \l 显示所有数据库   \d 显示当前库中所有表   \d  [表名] 显示该表内容   \q 断开与数据库的连接   \c - [user] 切换到用户user   \c [库名] 进入该数据库      alter">
+<meta name="keywords" content="postgresql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="postgresql入门">
 <meta property="og:url" content="http://herobrine.site/2019/10/12/postgresql入门/index.html">
 <meta property="og:site_name" content="Herobrine">
-<meta property="og:description" content="postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres；  \l 显示所有数据库  alter table  表名  add (字段  字段类型)  [ default  &amp;#39;输入默认值&amp;#39;]  [null/not null]  ;举例：ALTER TABLE employee  ADD  s">
+<meta property="og:description" content="postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres；     指令 功能    \l 显示所有数据库   \d 显示当前库中所有表   \d  [表名] 显示该表内容   \q 断开与数据库的连接   \c - [user] 切换到用户user   \c [库名] 进入该数据库      alter">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-10-12T17:06:37.601Z">
+<meta property="og:updated_time" content="2019-10-20T15:49:50.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="postgresql入门">
-<meta name="twitter:description" content="postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres；  \l 显示所有数据库  alter table  表名  add (字段  字段类型)  [ default  &amp;#39;输入默认值&amp;#39;]  [null/not null]  ;举例：ALTER TABLE employee  ADD  s">
+<meta name="twitter:description" content="postgresql 常用指令 在命令行输入 psql -l localhost -U postgres 连接本地的数据库，用户名为postgres；     指令 功能    \l 显示所有数据库   \d 显示当前库中所有表   \d  [表名] 显示该表内容   \q 断开与数据库的连接   \c - [user] 切换到用户user   \c [库名] 进入该数据库      alter">
 
 
 
@@ -331,6 +332,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -366,8 +389,41 @@
         <h2 id="postgresql-常用指令"><a href="#postgresql-常用指令" class="headerlink" title="postgresql 常用指令"></a>postgresql 常用指令</h2><ul>
 <li><p>在命令行输入 <code>psql -l localhost -U postgres</code> 连接本地的数据库，用户名为postgres；</p>
 </li>
-<li><p><code>\l</code> 显示所有数据库</p>
+<li><table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>\l</code></td>
+<td>显示所有数据库</td>
+</tr>
+<tr>
+<td><code>\d</code></td>
+<td>显示当前库中所有表</td>
+</tr>
+<tr>
+<td><code>\d  [表名]</code></td>
+<td>显示该表内容</td>
+</tr>
+<tr>
+<td><code>\q</code></td>
+<td>断开与数据库的连接</td>
+</tr>
+<tr>
+<td><code>\c - [user]</code></td>
+<td>切换到用户user</td>
+</tr>
+<tr>
+<td><code>\c [库名]</code></td>
+<td>进入该数据库</td>
+</tr>
+</tbody></table>
 </li>
+<li></li>
+<li></li>
 <li><p><code>alter table  表名  add (字段  字段类型)  [ default  &#39;输入默认值&#39;]  [null/not null]  ;</code><br>举例：<code>ALTER TABLE employee  ADD  spbh varchar(20) NOT NULL Default 0</code></p>
 </li>
 <li><p>备份数据库：<br>在命令行输入<code>pg_dump -h localhost -U postgres &quot;student&quot; &gt; &quot;d:\student.sql&quot;</code><br>或者<code>pg_dump -h localhost -U postgres -d student -f &quot;d:\ student.sql&quot;</code></p>
@@ -424,6 +480,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/postgresql/" rel="tag"># postgresql</a>
+          
+        </div>
+      
 
       
       
@@ -442,6 +504,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/10/21/数据库知识点/" rel="prev" title="数据库知识点总结">
+                数据库知识点总结 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -520,7 +586,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -531,7 +597,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -542,7 +608,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
