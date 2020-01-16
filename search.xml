@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[数据库知识点总结]]></title>
     <url>%2F2019%2F10%2F21%2F%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9F%A5%E8%AF%86%E7%82%B9%2F</url>
-    <content type="text"><![CDATA[第六章 关系数据理论二、规范化 第一范式（1NF） 一个低一级范式的关系模式通过模式分解可以转化为若干个高一级范式的关系模式的集合，这种过程就叫规范化。 第二范式（2NF） 定义：若$R\in1NF$，且每一个非主属性完全函数依赖于任何一个候选码，则$R\in2NF$。 第三范式（3NF） 若$R\in3NF$，则每一个非主属性既不传递依赖于码，也不部分依赖于码。也就是说，可以证明如果$R\in3NF$，则必有$R\in2NF$。]]></content>
+    <content type="text"><![CDATA[第六章 关系数据理论二、规范化 第一范式（1NF） 一个低一级范式的关系模式通过模式分解可以转化为若干个高一级范式的关系模式的集合，这种过程就叫规范化。 第二范式（2NF） 定义：若$R\in1NF$，且每一个非主属性完全函数依赖于任何一个候选码，则$R\in2NF$。 第三范式（3NF） 若$R\in3NF$，则每一个非主属性既不传递依赖于码，也不部分依赖于码。也就是说，可以证明如果$R\in3NF$，则必有$R\in2NF$。 BC范式（BCNF）]]></content>
       <categories>
         <category>数据库</category>
       </categories>
@@ -83,7 +83,7 @@
   <entry>
     <title><![CDATA[Minecraft 1.12.2 Mod Tutorial 01 搭建开发环境]]></title>
     <url>%2F2019%2F06%2F26%2FMinecraft-1-12-2-Mod-Tutorial-01-%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%2F</url>
-    <content type="text"><![CDATA[一、安装Java既然要写mod，那么java必不可少，首先我们就来安装jdk (java development kit)。jdk可以去官网下载。下载完毕后一路下一步即可安装。 二、安装IntelliJ IDEA这里更推荐用IDEA来进行mod开发，原因就是非常好用并且IDEA有关于mc开发的插件。同样给出下载链接Intellij IDEA 官网下载。社区版即可，如果有教育邮箱可以免费使用付费版本，下载后按照流程安装即可。 三、搭建mod开发环境1.下载mdkmdk可以直接去Forge官网下载推荐的稳定版本Mdk 1.12.2-14.23.5.2768 2.解压mdk将下载好的Mdk解压到你的工程目录，然后我们用编辑器打开build.gradle文件，在最下面加上下面一段代码，目的是将构建的编码改为UTF-8。 123tasks.withType(JavaCompile)&#123; options.encoding = "UTF-8"&#125; 其他部分改不改都无所谓，不过你也可以自己研究研究这个文件的其他部分。 3.构建环境在当前目录打开命令行，输入这个命令 1gradlew setupDecompWorkspace idea 接下来就是漫长的等待，当出现 build successful 就是构建成功了。 4.在IDEA中运行项目]]></content>
+    <content type="text"><![CDATA[一、安装Java既然要写mod，那么java必不可少，首先我们就来安装jdk (java development kit)。jdk可以去官网下载。下载完毕后一路下一步即可安装。 二、安装IntelliJ IDEA这里更推荐用IDEA来进行mod开发，原因就是非常好用并且IDEA有关于mc开发的插件。同样给出下载链接Intellij IDEA 官网下载。社区版即可，如果有教育邮箱可以免费使用付费版本，下载后按照流程安装即可。 三、搭建mod开发环境1.下载mdkmdk可以直接去Forge官网下载推荐的稳定版本Mdk 1.12.2-14.23.5.2768 2.解压mdk将下载好的Mdk解压到你的工程目录，然后我们用编辑器打开build.gradle文件，在最下面加上下面一段代码，目的是将构建的编码改为UTF-8。123tasks.withType(JavaCompile)&#123; options.encoding = "UTF-8"&#125; 其他部分改不改都无所谓，不过你也可以自己研究研究这个文件的其他部分。 3.构建环境在当前目录打开命令行，输入这个命令1gradlew setupDecompWorkspace idea 接下来就是漫长的等待，当出现 build successful 就是构建成功了。 4.在IDEA中运行项目]]></content>
       <categories>
         <category>Minecraft</category>
         <category>Forge</category>
