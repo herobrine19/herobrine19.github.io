@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[minecraft常用指令]]></title>
+    <url>%2F2020%2F01%2F17%2Fminecraft%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[/gamerule mobGriefing false 关闭爆炸破坏方块 /gamerule doFireTick false 关闭火势蔓延 /gamerule keepInventory true 开启死亡不掉落 /difficulty 0 调整难度，0为和平，1为简单，2为普通，3为困难 /spawnpoint [玩家] 设置玩家的出生点为脚下 /setworldspawn 设置全服玩家的出生点为脚下]]></content>
+      <categories>
+        <category>Minecraft</category>
+      </categories>
+      <tags>
+        <tag>minecraft</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[hexo添加和删除live2D模型]]></title>
     <url>%2F2020%2F01%2F17%2Fhexo%E6%B7%BB%E5%8A%A0%E5%92%8C%E5%88%A0%E9%99%A4live2D%E6%A8%A1%E5%9E%8B%2F</url>
     <content type="text"><![CDATA[添加live2d模型]]></content>
