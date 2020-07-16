@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[785.判断二分图]]></title>
+    <url>%2F2020%2F07%2F16%2F785-%E5%88%A4%E6%96%AD%E4%BA%8C%E5%88%86%E5%9B%BE%2F</url>
+    <content type="text"><![CDATA[题目链接785.判断二分图 题目描述给定一个无向图graph，当这个图为二分图时返回true。 如果我们能将一个图的节点集合分割成两个独立的子集A和B，并使图中的每一条边的两个节点一个来自A集合，一个来自B集合，我们就将这个图称为二分图。 graph将会以邻接表方式给出，graph[i]表示图中与节点i相连的所有节点。每个节点都是一个在0到graph.length-1之间的整数。这图中没有自环和平行边： graph[i] 中不存在i，并且graph[i]中没有重复的值。 12345678910示例 1:输入: [[1,3], [0,2], [1,3], [0,2]]输出: true解释: 无向图如下:0----1| || |3----2我们可以将节点分成两组: &#123;0, 2&#125; 和 &#123;1, 3&#125;。 12345678910示例 2:输入: [[1,2,3], [0,2], [0,1,3], [0,2]]输出: false解释: 无向图如下:0----1| \ || \ |3----2我们不能将节点分割成两个独立的子集。 注意: graph 的长度范围为 [1, 100]。 graph[i] 中的元素的范围为 [0, graph.length - 1]。 graph[i] 不会包含 i 或者有重复的值。 图是无向的: 如果j 在 graph[i]里边, 那么 i 也会在 graph[j]里边。 解题思路什么是二分图二分图也叫二部图。对于图中的任意两个节点u和v，如果他们之间有一条边相连，那么u和v必须属于不同的集合。并且只能有两个集合，如果两个相连的点在同一个集合，就不是二分图。 如何判断二分图判断这个图是否是二分图，我们可以对其节点进行染色操作，最后根据染色的结果来判断是否是二分图。 我们可以任选一个节点开始，将起染成红色，然后遍历与其相连的节点，把他们都染成绿色，再把和这些绿色节点相邻的点染成红色，以此类推，直到所有的节点都被染色。 如果我们染色成功，则红色节点和绿色节点分属两个集合，这个无向图就是个二分图；如果我们不能成功染色，就是说在染色过程中遇到了一个已经染色的节点，假设它是红色的，但我们现在要把它染成绿色，这就发生了矛盾，就无法继续染色了，说明这个图就不是二分图。 算法流程 任选一个节点，将其染成红色，并从该节点开始对整个无向图进行遍历； 在遍历的过程中，如果我们通过节点 u 遍历到了节点 v（即 u 和 v 在图中有一条边直接相连），那么会有两种情况： 如果 v 未被染色，那么我们将其染成与 u 不同的颜色，并对 v 直接相连的节点进行遍历； 如果 v 被染色，并且颜色与 u 相同，那么说明给定的无向图不是二分图。我们可以直接退出遍历并返回 False作为答案。 当遍历结束时，说明给定的无向图是二分图，返回 True 作为答案； 可以使用DFS或者BFS对无向图进行遍历。 注意题目中给定的无向图不一定保证连通，因此我们需要进行多次遍历，直到每一个节点都被染色，或确定答案为False 为止。每次遍历开始时，我们任选一个未被染色的节点，将所有与该节点直接或间接相连的节点进行染色。 代码dfs123456789101112131415161718192021222324252627282930313233343536373839class Solution &#123;private: static constexpr int UNCOLORED = 0; static constexpr int RED = 1; static constexpr int GREEN = 2; vector&lt;int&gt; color; //记录节点涂色的情况 bool flag; //记录是否是二分图public: void dfs(int node, int c, vector&lt;vector&lt;int&gt;&gt;&amp; graph) &#123; color[node]=c; if(!flag) return; int nextColor=(c==RED?GREEN:RED); for(int neighbour:graph[node]) &#123; if(color[neighbour]==UNCOLORED)&#123; dfs(neighbour, nextColor, graph); &#125; else if(color[neighbour]!=nextColor)&#123; flag = false; return; &#125; &#125; &#125; bool isBipartite(vector&lt;vector&lt;int&gt;&gt;&amp; graph) &#123; int n=graph.size(); color.assign(n,UNCOLORED);//先把图中每个点初始化为未涂色 flag = true; for(int i=0;i&lt;n;i++)&#123; if(color[i]==UNCOLORED)&#123; dfs(i, RED, graph); &#125; &#125; return flag; &#125;&#125;; bfs1234567891011121314151617181920212223242526272829303132333435363738394041424344454647class Solution &#123;private: static constexpr int UNCOLORED = 0; static constexpr int RED = 1; static constexpr int GREEN = 2; vector&lt;int&gt; color; //记录节点涂色的情况 bool flag; //记录是否是二分图public: bool bfs(int node, int c, vector&lt;vector&lt;int&gt;&gt;&amp; graph) &#123; queue&lt;int&gt;Q; Q.push(node); color[node]=c; while(!Q.empty()) &#123; int front=Q.front(); Q.pop(); int nextColor=(color[front]==RED?GREEN:RED); for(int neighbor:graph[front]) &#123; if(color[neighbor]==UNCOLORED) &#123; color[neighbor]=nextColor; Q.push(neighbor); &#125; else if(color[neighbor]!=nextColor) return false; &#125; &#125; return true; &#125; bool isBipartite(vector&lt;vector&lt;int&gt;&gt;&amp; graph) &#123; int n=graph.size(); color.assign(n,UNCOLORED);//先把图中每个点初始化为未涂色 flag = true; for(int i=0;i&lt;n;i++)&#123; if(color[i]==UNCOLORED)&#123; flag = bfs(i, RED, graph); if(!flag) return flag; &#125; &#125; return true; &#125;&#125;; ​]]></content>
+      <categories>
+        <category>leetcode</category>
+      </categories>
+      <tags>
+        <tag>二分图</tag>
+        <tag>BFS</tag>
+        <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[计算机启动的过程]]></title>
+    <url>%2F2020%2F07%2F15%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%90%AF%E5%8A%A8%E7%9A%84%E8%BF%87%E7%A8%8B%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[卡特兰数]]></title>
+    <url>%2F2020%2F07%2F15%2F%E5%8D%A1%E7%89%B9%E5%85%B0%E6%95%B0%2F</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
     <title><![CDATA[二分法边界值问题总结]]></title>
     <url>%2F2020%2F07%2F02%2F%E4%BA%8C%E5%88%86%E6%B3%95%E8%BE%B9%E7%95%8C%E5%80%BC%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[二分法边界值问题总结一、结论先说结论，二分边界值一般有两种正确的写法： 第一种写法，二分的区间左闭右开，[left, right)： 123456789101112int left=0,right=nums.size();//right取不到int mid=0;while(left&lt;right)//这里是小于号&#123; mid=left+(right-left)/2;//一般都这么写，防止left+right溢出 if(nums[mid]==target) return mid; if(nums[mid]&lt;target) left=mid+1; else right=mid;//注意&#125; 第二种写法，二分的区间左右都是闭的，[left, right]： 123456789101112int left=0,right=nums.size()-1;//right能取到int mid=0;while(left&lt;=right)//这里是小于等于&#123; mid=left+(right-left)/2; if(nums[mid]==target) return mid; if(nums[mid]&lt;target) left=mid+1; else right=mid-1;//注意&#125; 二、原理]]></content>
+      <categories>
+        <category>Algorithm</category>
+      </categories>
       <tags>
         <tag>二分</tag>
       </tags>
