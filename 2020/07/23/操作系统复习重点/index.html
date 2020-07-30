@@ -97,7 +97,8 @@
 <meta property="og:image" content="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-07-24-073946.png">
 <meta property="og:image" content="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-07-24-145318.png">
 <meta property="og:image" content="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-07-27-171704.png">
-<meta property="og:updated_time" content="2020-07-27T17:24:13.147Z">
+<meta property="og:image" content="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-07-30-165204.png">
+<meta property="og:updated_time" content="2020-07-30T16:52:08.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统复习重点">
 <meta name="twitter:description" content="一、操作系统概述 1. 操作系统的概念、功能和目标 概念（定义） 操作系统控制和管理整个计算机系统的硬件和软件资源，并合理地组织调度计算机系统的工作和资源的分配，以提供给用户和其他软件方便的借口和环境，它是计算机系统中最基本的 系统软件。  功能  资源的管理者 处理机管理 存储器管理 文件管理 设备管理   向用户提供服务 命令接口（用户直接使用） 联机命令接口：命令行式 脱机命令接口：批处理式">
@@ -386,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.7k 字
+                  6k 字
                 </span>
               
 
@@ -402,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  16 分钟
+                  20 分钟
                 </span>
               
             </div>
@@ -976,7 +977,143 @@
 </table>
 </div>
 <p><strong>注意：</strong>比起早起的批处理系统来说，由于计算机造价大幅降低，因此之后出现的交互式操作系统（包括分时操作系统、实时操作系统等）更注重系统的响应时间、公平性、平衡性等指标。而这几种算法恰好也能较好地满足交互式系统的需求。因此这三种算法适用于<strong><em>交互式系统</em></strong>（比如UNIX使用的就是多级反馈队列调度算法）。</p>
-<h3 id="（三）进程同步"><a href="#（三）进程同步" class="headerlink" title="（三）进程同步"></a>（三）进程同步</h3><h3 id="（四）死锁"><a href="#（四）死锁" class="headerlink" title="（四）死锁"></a>（四）死锁</h3><h2 id="三、内存管理"><a href="#三、内存管理" class="headerlink" title="三、内存管理"></a>三、内存管理</h2><h2 id="四、文件管理"><a href="#四、文件管理" class="headerlink" title="四、文件管理"></a>四、文件管理</h2><h2 id="五、输入输出（IO）管理"><a href="#五、输入输出（IO）管理" class="headerlink" title="五、输入输出（IO）管理"></a>五、输入输出（IO）管理</h2>
+<h3 id="（三）进程同步"><a href="#（三）进程同步" class="headerlink" title="（三）进程同步"></a>（三）进程同步</h3><p><img src="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-07-30-165204.png" alt></p>
+<h4 id="1-同步、互斥"><a href="#1-同步、互斥" class="headerlink" title="1. 同步、互斥"></a>1. 同步、互斥</h4><ol>
+<li>进程同步<ul>
+<li>并发性带来了异步性，有时需要通过进程同步解决这种异步的问题</li>
+<li>有的进程之间需要相互配合地完成工作，各进程的工作推进需要遵循一定的先后顺序</li>
+</ul>
+</li>
+<li>进程互斥<ul>
+<li>对临界资源的访问，需要互斥的进行。即同一时间段内只能允许一个进程访问该资源</li>
+<li>四个部分<ul>
+<li>进入区：检查是否可以进入临界区，若可进入，需要“上锁”</li>
+<li>临界区：访问临界资源的那段代码</li>
+<li>退出区：负责“解锁”</li>
+<li>剩余区：其余代码部分</li>
+</ul>
+</li>
+<li>需要遵循的原则<ul>
+<li>空闲让进：临界区空闲时，应允许一个进程访问</li>
+<li>忙则等待：临界区正在被访问时，其他试图访问的进程需要等待</li>
+<li>有限等待：要在有限时间内进入临界区，保证不会饥饿</li>
+<li>让权等待：进不了临界区的进程，要释放处理机，防止忙等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="2-进程互斥的软件实现方法"><a href="#2-进程互斥的软件实现方法" class="headerlink" title="2. 进程互斥的软件实现方法"></a>2. 进程互斥的软件实现方法</h4><ol>
+<li>单标志法<ul>
+<li>在进入区只做“检查”，不“上锁”</li>
+<li>在退出区把临界资源的使用权转交给另一个进程（相当于在退出区既给另一进程“解锁”，又给自己“上锁”）</li>
+<li>主要问题：不遵循“空闲让进”原则</li>
+</ul>
+</li>
+<li>双标志先检查<ul>
+<li>在进入区先“检查”后“上锁”，退出区“解锁”</li>
+<li>主要问题：不遵循“忙则等待”原则</li>
+</ul>
+</li>
+<li>双标志后检查<ul>
+<li>在进入区先“加锁”后”检查“，退出区“解锁”</li>
+<li>主要问题：不遵循“空闲让进、有限等待”原则，可能导致“饥饿”</li>
+</ul>
+</li>
+<li>Peterson算法<ul>
+<li>在进入区“主动争取——主动谦让——检查对方是否想进——己方是否谦让”</li>
+<li>主要问题：不遵循“让权等待”原则，会发生“忙等”</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-进程互斥的硬件实现方法"><a href="#3-进程互斥的硬件实现方法" class="headerlink" title="3. 进程互斥的硬件实现方法"></a>3. 进程互斥的硬件实现方法</h4><ol>
+<li>中断屏蔽方法<ul>
+<li>使用开关中断指令实现</li>
+<li>优点：简单高效</li>
+<li>缺点：只适用于单处理机；只适用于操作系统内核进程</li>
+</ul>
+</li>
+<li>TestAndSet(TS指令/TSL指令)<ul>
+<li>步骤：<ul>
+<li>old记录是否已被上锁</li>
+<li>再将lock设为true</li>
+<li>检查临界区是否已被上锁（若已上锁，则循环重复前几步）</li>
+</ul>
+</li>
+<li>优点：实现简单；适用于多处理机环境；</li>
+<li>缺点：不满足“让权等待”</li>
+</ul>
+</li>
+<li>Swap指令（XCHG指令）：逻辑上同TSL</li>
+</ol>
+<h4 id="4-信号量机制"><a href="#4-信号量机制" class="headerlink" title="4. 信号量机制"></a>4. 信号量机制</h4><ol>
+<li>整型信号量<ul>
+<li>用一个整数型变量作为信号量，数值表示某种资源数</li>
+<li>整型信号量与普通整型变量的区别：对信号量只能执行 初始化、P、V三种操作</li>
+<li>整型信号量存在的<strong>问题</strong>：不满足让权等待原则</li>
+</ul>
+</li>
+<li>记录型信号量<ul>
+<li>S.value表示某种资源数，S.L指向等待该资源的队列</li>
+<li>P操作中，一定是先S.value—，之后可能需要执行block原语</li>
+<li>V操作中，一定是先S.value++，之后可能需要执行wakeup原语</li>
+<li>注意：要能够自己腿短在什么条件下需要执行block或wakeup</li>
+<li>可以用记录型信号量实现系统资源的“申请”和“释放”</li>
+<li>可以用记录型信号量实现进程互斥、进程同步</li>
+</ul>
+</li>
+</ol>
+<h4 id="5-用信号量实现进程互斥、同步"><a href="#5-用信号量实现进程互斥、同步" class="headerlink" title="5. 用信号量实现进程互斥、同步"></a>5. 用信号量实现进程互斥、同步</h4><ol>
+<li>实现进程互斥<ul>
+<li>分析问题，确定临界区</li>
+<li>设置互斥信号量，初值为1</li>
+<li>临界区之前对信号量执行P操作</li>
+<li>临界区之后对信号量执行V操作</li>
+</ul>
+</li>
+<li>实现进程同步<ul>
+<li>分析问题，找出哪里需要实现“一前一后”的同步关系</li>
+<li>设置同步信号量，初始值为0</li>
+<li>在“前操作”之后执行V操作</li>
+<li>在“后操作”之前执行P操作</li>
+</ul>
+</li>
+<li>实现进程的前驱关系<ul>
+<li>分析问题，画出前驱图，把每一对前驱关系都看成一个同步问题</li>
+<li>为每一对前驱关系设置同步信号量，初值为0</li>
+<li>在每个“前操作”之后执行V操作</li>
+<li>在每个“后操作”之前执行P操作</li>
+</ul>
+</li>
+</ol>
+<h4 id="6-信号量相关问题"><a href="#6-信号量相关问题" class="headerlink" title="6. 信号量相关问题"></a>6. 信号量相关问题</h4><ol>
+<li>生产者-消费者问题</li>
+<li>多生产者-多消费者问题</li>
+<li>吸烟者问题</li>
+<li>读者-写者问题：计数器count</li>
+<li>哲学家进餐问题</li>
+</ol>
+<p>注意：同步信号量的P操作一定在互斥信号量的P操作之前</p>
+<h4 id="7-管程（与类的封装特性相似）"><a href="#7-管程（与类的封装特性相似）" class="headerlink" title="7. 管程（与类的封装特性相似）"></a>7. 管程（与类的封装特性相似）</h4><ol>
+<li>为什么要引入管程：解决信号量机制编程麻烦、易出错的问题</li>
+<li>组成<ul>
+<li>共享数据结构</li>
+<li>对数据结构初始化的语句</li>
+<li>一组用来访问数据结构的过程（函数）</li>
+</ul>
+</li>
+<li>基本特征<ul>
+<li>各外部进程/线程只能通过管程提供的特定“入口”才能访问共享数据</li>
+<li>每次仅允许一个进程在管程内执行某个内部过程</li>
+</ul>
+</li>
+<li>补充<ul>
+<li>各进程必须互斥访问管程的特性是由编译器实现的</li>
+<li>可在管程中设置条件变量及等待/唤醒操作以解决同步问题</li>
+</ul>
+</li>
+</ol>
+<h3 id="（四）死锁"><a href="#（四）死锁" class="headerlink" title="（四）死锁"></a>（四）死锁</h3><h2 id="三、内存管理"><a href="#三、内存管理" class="headerlink" title="三、内存管理"></a>三、内存管理</h2><h2 id="四、文件管理"><a href="#四、文件管理" class="headerlink" title="四、文件管理"></a>四、文件管理</h2><h2 id="五、输入输出（IO）管理"><a href="#五、输入输出（IO）管理" class="headerlink" title="五、输入输出（IO）管理"></a>五、输入输出（IO）管理</h2>
       
     </div>
     
@@ -1117,7 +1254,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">28</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1128,7 +1265,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1139,7 +1276,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">24</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1188,7 +1325,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、操作系统概述"><span class="nav-number">1.</span> <span class="nav-text">一、操作系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-操作系统的概念、功能和目标"><span class="nav-number">1.1.</span> <span class="nav-text">1. 操作系统的概念、功能和目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-操作系统的特征"><span class="nav-number">1.2.</span> <span class="nav-text">2. 操作系统的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作系统的发展与分类"><span class="nav-number">1.3.</span> <span class="nav-text">3. 操作系统的发展与分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OS的运行机制和体系结构"><span class="nav-number">1.4.</span> <span class="nav-text">4. OS的运行机制和体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-中断和异常"><span class="nav-number">1.5.</span> <span class="nav-text">5. 中断和异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-系统调用"><span class="nav-number">1.6.</span> <span class="nav-text">6. 系统调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、进程管理"><span class="nav-number">2.</span> <span class="nav-text">二、进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）进程与线程"><span class="nav-number">2.1.</span> <span class="nav-text">（一）进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-进程的定义、组成、组织方式、特征"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 进程的定义、组成、组织方式、特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程的状态与转换"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 进程的状态与转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进程控制"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 进程控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进程通信"><span class="nav-number">2.1.4.</span> <span class="nav-text">4. 进程通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-线程概念和多线程模型"><span class="nav-number">2.1.5.</span> <span class="nav-text">5. 线程概念和多线程模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）处理机调度"><span class="nav-number">2.2.</span> <span class="nav-text">（二）处理机调度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-处理机调度"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. 处理机调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程调度"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 进程调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-调度算法的评价指标"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. 调度算法的评价指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-调度算法（适用于批处理系统）"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. 调度算法（适用于批处理系统）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-调度算法（适用于交互式系统）"><span class="nav-number">2.2.5.</span> <span class="nav-text">5. 调度算法（适用于交互式系统）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（三）进程同步"><span class="nav-number">2.3.</span> <span class="nav-text">（三）进程同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（四）死锁"><span class="nav-number">2.4.</span> <span class="nav-text">（四）死锁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、内存管理"><span class="nav-number">3.</span> <span class="nav-text">三、内存管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、文件管理"><span class="nav-number">4.</span> <span class="nav-text">四、文件管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、输入输出（IO）管理"><span class="nav-number">5.</span> <span class="nav-text">五、输入输出（IO）管理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、操作系统概述"><span class="nav-number">1.</span> <span class="nav-text">一、操作系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-操作系统的概念、功能和目标"><span class="nav-number">1.1.</span> <span class="nav-text">1. 操作系统的概念、功能和目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-操作系统的特征"><span class="nav-number">1.2.</span> <span class="nav-text">2. 操作系统的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作系统的发展与分类"><span class="nav-number">1.3.</span> <span class="nav-text">3. 操作系统的发展与分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OS的运行机制和体系结构"><span class="nav-number">1.4.</span> <span class="nav-text">4. OS的运行机制和体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-中断和异常"><span class="nav-number">1.5.</span> <span class="nav-text">5. 中断和异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-系统调用"><span class="nav-number">1.6.</span> <span class="nav-text">6. 系统调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、进程管理"><span class="nav-number">2.</span> <span class="nav-text">二、进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#（一）进程与线程"><span class="nav-number">2.1.</span> <span class="nav-text">（一）进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-进程的定义、组成、组织方式、特征"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 进程的定义、组成、组织方式、特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程的状态与转换"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 进程的状态与转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进程控制"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 进程控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进程通信"><span class="nav-number">2.1.4.</span> <span class="nav-text">4. 进程通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-线程概念和多线程模型"><span class="nav-number">2.1.5.</span> <span class="nav-text">5. 线程概念和多线程模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（二）处理机调度"><span class="nav-number">2.2.</span> <span class="nav-text">（二）处理机调度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-处理机调度"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. 处理机调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程调度"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 进程调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-调度算法的评价指标"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. 调度算法的评价指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-调度算法（适用于批处理系统）"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. 调度算法（适用于批处理系统）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-调度算法（适用于交互式系统）"><span class="nav-number">2.2.5.</span> <span class="nav-text">5. 调度算法（适用于交互式系统）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（三）进程同步"><span class="nav-number">2.3.</span> <span class="nav-text">（三）进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-同步、互斥"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 同步、互斥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程互斥的软件实现方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 进程互斥的软件实现方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进程互斥的硬件实现方法"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. 进程互斥的硬件实现方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-信号量机制"><span class="nav-number">2.3.4.</span> <span class="nav-text">4. 信号量机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-用信号量实现进程互斥、同步"><span class="nav-number">2.3.5.</span> <span class="nav-text">5. 用信号量实现进程互斥、同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-信号量相关问题"><span class="nav-number">2.3.6.</span> <span class="nav-text">6. 信号量相关问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-管程（与类的封装特性相似）"><span class="nav-number">2.3.7.</span> <span class="nav-text">7. 管程（与类的封装特性相似）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#（四）死锁"><span class="nav-number">2.4.</span> <span class="nav-text">（四）死锁</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、内存管理"><span class="nav-number">3.</span> <span class="nav-text">三、内存管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、文件管理"><span class="nav-number">4.</span> <span class="nav-text">四、文件管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、输入输出（IO）管理"><span class="nav-number">5.</span> <span class="nav-text">五、输入输出（IO）管理</span></a></li></ol></div>
             
 
           </div>
