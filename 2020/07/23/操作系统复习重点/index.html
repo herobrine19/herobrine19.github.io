@@ -100,7 +100,8 @@
 <meta property="og:image" content="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-07-30-165204.png">
 <meta property="og:image" content="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-08-08-033845.png">
 <meta property="og:image" content="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-09-14-145815.png">
-<meta property="og:updated_time" content="2020-09-16T09:18:34.241Z">
+<meta property="og:image" content="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-09-16-153035.png">
+<meta property="og:updated_time" content="2020-09-20T07:38:13.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="操作系统复习重点">
 <meta name="twitter:description" content="一、操作系统概述 1. 操作系统的概念、功能和目标 概念（定义） 操作系统控制和管理整个计算机系统的硬件和软件资源，并合理地组织调度计算机系统的工作和资源的分配，以提供给用户和其他软件方便的借口和环境，它是计算机系统中最基本的 系统软件。  功能  资源的管理者 处理机管理 存储器管理 文件管理 设备管理   向用户提供服务 命令接口（用户直接使用） 联机命令接口：命令行式 脱机命令接口：批处理式">
@@ -389,7 +390,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  10.7k 字
+                  13.2k 字
                 </span>
               
 
@@ -405,7 +406,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  35 分钟
+                  44 分钟
                 </span>
               
             </div>
@@ -1524,7 +1525,8 @@
 </ul>
 </li>
 </ol>
-<h3 id="二-虚拟内存管理"><a href="#二-虚拟内存管理" class="headerlink" title="(二)虚拟内存管理"></a>(二)虚拟内存管理</h3><h4 id="1-虚拟内存的基本概念"><a href="#1-虚拟内存的基本概念" class="headerlink" title="1. 虚拟内存的基本概念"></a>1. 虚拟内存的基本概念</h4><ol>
+<h3 id="二-虚拟内存管理"><a href="#二-虚拟内存管理" class="headerlink" title="(二)虚拟内存管理"></a>(二)虚拟内存管理</h3><p><img src="https://dajinge-1258413278.cos.ap-nanjing.myqcloud.com/blog/2020-09-16-153035.png" alt></p>
+<h4 id="1-虚拟内存的基本概念"><a href="#1-虚拟内存的基本概念" class="headerlink" title="1. 虚拟内存的基本概念"></a>1. 虚拟内存的基本概念</h4><ol>
 <li>传统存储管理方式的特征、缺点<ul>
 <li>一次性：作业数据必须一次全部调入内存</li>
 <li>驻留性：作业数据再整个运行期间都会常驻内存</li>
@@ -1582,7 +1584,236 @@
 </ul>
 </li>
 </ol>
-<h4 id="3-页面置换算法"><a href="#3-页面置换算法" class="headerlink" title="3. 页面置换算法"></a>3. 页面置换算法</h4><h4 id="4-页面分配策略"><a href="#4-页面分配策略" class="headerlink" title="4. 页面分配策略"></a>4. 页面分配策略</h4><h2 id="四、文件管理"><a href="#四、文件管理" class="headerlink" title="四、文件管理"></a>四、文件管理</h2><h3 id="一-文件系统基础"><a href="#一-文件系统基础" class="headerlink" title="(一)文件系统基础"></a>(一)文件系统基础</h3><h3 id="二-文件系统实现"><a href="#二-文件系统实现" class="headerlink" title="(二)文件系统实现"></a>(二)文件系统实现</h3><h3 id="三-磁盘组织与管理"><a href="#三-磁盘组织与管理" class="headerlink" title="(三)磁盘组织与管理"></a>(三)磁盘组织与管理</h3><h2 id="五、输入输出（IO）管理"><a href="#五、输入输出（IO）管理" class="headerlink" title="五、输入输出（IO）管理"></a>五、输入输出（IO）管理</h2><h3 id="一-IO管理概述"><a href="#一-IO管理概述" class="headerlink" title="(一)IO管理概述"></a>(一)IO管理概述</h3><h3 id="二-IO核心子系统"><a href="#二-IO核心子系统" class="headerlink" title="(二)IO核心子系统"></a>(二)IO核心子系统</h3>
+<h4 id="3-页面置换算法"><a href="#3-页面置换算法" class="headerlink" title="3. 页面置换算法"></a>3. 页面置换算法</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>算法名</th>
+<th>算法规则</th>
+<th>优缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OPT</td>
+<td>优先淘汰最长时间内不会被访问的页面</td>
+<td>缺页率最小，性能最好；但无法实现</td>
+</tr>
+<tr>
+<td>FIFO</td>
+<td>优先淘汰最先进入内存的页面</td>
+<td>实现简单；但性能很差，可能出现Belady异常</td>
+</tr>
+<tr>
+<td>LRU</td>
+<td>优先淘汰最近最久没访问的页面</td>
+<td>性能很好；但需要硬件支持，算法开销大</td>
+</tr>
+<tr>
+<td>CLOCK（NRU）</td>
+<td>循环扫描各页面，第一轮淘汰访问位=0的，并将扫描过的页面访问位改为1。若第一轮没选中，则进行第二轮扫描。</td>
+<td>实现简单，算法开销小；但未考虑页面是否被修改过</td>
+</tr>
+<tr>
+<td>改进型CLOCK</td>
+<td>若用【访问位，修改位】的形式表述，则：<br>第一轮：淘汰【0，0】<br>第二轮：淘汰【0，1】，并将扫描过的页面访问位都置为0<br>第三轮：淘汰【0，0】<br>第四轮：淘汰【0，1】</td>
+<td>算法开销较小，性能也不错</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="4-页面分配策略"><a href="#4-页面分配策略" class="headerlink" title="4. 页面分配策略"></a>4. 页面分配策略</h4><ol>
+<li>页面分配、置换策略<ul>
+<li>固定分配VS可变分配：区别在于进程运行期间驻留集大小是否可变</li>
+<li>局部置换VS全局置换：区别在于发生缺页时是否只能从进程自己的页面中选择一个换出</li>
+<li>固定分配局部置换：进程运行前就分配一定数量的物理块，缺页时只能换出进程自己的某一页</li>
+<li>可变分配全局置换：只要缺页就分配新物理块，可能来自空闲物理块，也可能需换出别的进程页面</li>
+<li>可变分配局部置换：频繁缺页的进程，多分配一些物理块；缺页率很低的进程，回收一些物理块。直到缺页率合适</li>
+</ul>
+</li>
+<li>何时调入页面<ul>
+<li>预调页策略：一般用于进程运行前</li>
+<li>请求调页策略：进程运行时，发现缺页再调页</li>
+</ul>
+</li>
+<li>从何处调页<ul>
+<li>对换区：采用连续存储方式，速度更快</li>
+<li>文件区：采用离散存储方式，速度更慢</li>
+<li>对换区足够大：运行将数据从文件区复制到对换区，之后所有的页面调入、调出都是在内存与对换区之间进行</li>
+<li>对换区不够大：不会修改的数据每次都从文件区调入；会修改的数据调出到对换区，需要时再从对换区调入</li>
+<li>UNIX方式：第一次使用的页面都从文件区调入；调出的页面都写回对换区，再次使用时从对换区调入</li>
+</ul>
+</li>
+<li>抖动（颠簸）现象：页面频繁换入换出的现象。主要原因是分配给进程的物理块不够</li>
+<li>驻留集：指请求分页管理中给进程分配的内存块的集合</li>
+<li>工作集：在某段时间间隔里，进程实际访问页面的集合。驻留集大小一般不能小于工作集大小</li>
+</ol>
+<h2 id="四、文件管理"><a href="#四、文件管理" class="headerlink" title="四、文件管理"></a>四、文件管理</h2><h3 id="一-文件系统"><a href="#一-文件系统" class="headerlink" title="(一)文件系统"></a>(一)文件系统</h3><h4 id="1-初识文件管理"><a href="#1-初识文件管理" class="headerlink" title="1. 初识文件管理"></a>1. 初识文件管理</h4><ol>
+<li>文件的定义：一组有意义的信息的集合</li>
+<li>文件的属性：文件名、标识符、类型、位置、大小、保护信息…</li>
+<li>文件内部应该如何被组织起来（文件的逻辑结构）</li>
+<li>文件之间应该如何被组织起来（目录结构）</li>
+<li>操作系统应向上提供哪些功能（create、delete、open、close、read、write系统调用）</li>
+<li>文件应如何存放在外存中（文件的物理结构）</li>
+<li>操作系统如何管理外存中的空闲块（存储空间的管理）</li>
+<li>操作系统需要提供的其他文件管理功能<ul>
+<li>文件共享</li>
+<li>文件保护</li>
+</ul>
+</li>
+</ol>
+<h4 id="2-文件的逻辑结构"><a href="#2-文件的逻辑结构" class="headerlink" title="2. 文件的逻辑结构"></a>2. 文件的逻辑结构</h4><ol>
+<li>顺序文件<ul>
+<li>串结构：记录顺序与关键字无关</li>
+<li>顺序结构：记录按关键字顺序排列</li>
+<li>可变长记录的顺序文件无法实现随机存取，定长记录可以</li>
+<li>定长记录、顺序结构的顺序文件可以快速检索（根据关键字快速找到记录）</li>
+<li>最大缺点：不方便增加/删除记录</li>
+</ul>
+</li>
+<li>索引文件<ul>
+<li>建立一张索引表，每个记录对应一个表项。各记录不用保持顺序，方便增加/删除记录</li>
+<li>索引表本身就是定长记录的顺序文件，一个索引表项就是一条定长记录，因此索引文件可支持随机存取</li>
+<li>若索引按关键字排序，则可支持快速检索</li>
+<li>解决了顺序文件不方便增/删记录的问题，同时让不定长记录的文件实现了随机存取。但索引表可能占用很多空间</li>
+</ul>
+</li>
+<li>索引顺序文件<ul>
+<li>将记录分组，每组对应一个索引表项</li>
+<li>检索记录时先顺序查索引表，找到分组，再顺序查找分组</li>
+<li>当记录过多时，可建立多级索引表</li>
+</ul>
+</li>
+</ol>
+<h4 id="3-文件目录"><a href="#3-文件目录" class="headerlink" title="3. 文件目录"></a>3. 文件目录</h4><ol>
+<li>文件目录的实现<ul>
+<li>一个文件对应一个FCB，一个FCB就是一个目录项，多个FCB组成文件目录</li>
+<li>对目录的操作：搜索、创建文件、删除文件、显示文件、修改文件</li>
+</ul>
+</li>
+<li>目录结构<ul>
+<li>单级目录结构：一个系统只有一张目录表，不允许文件重名</li>
+<li>两级目录结构：不同用户的文件可以重名，但不能对文件进行分类</li>
+<li>多级（树形）目录结构：<ul>
+<li>不同目录下的文件可以重名，可以对文件进行分类，不方便文件共享</li>
+<li>系统根据文件路径找到目标文件</li>
+<li>从根目录出发的路径是绝对路径</li>
+<li>从当前目录出发的路径是相对路径</li>
+</ul>
+</li>
+<li>无环图目录结构<ul>
+<li>在树形目录结构的基础上，增加一些指向同一节点的有向边，使整个目录变成一个有向无环图</li>
+<li>为共享节点设置一个共享计数器，计数器为0时才真正删除该节点</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>索引节点<ul>
+<li>除了文件名之外的所有信息都放到索引节点中，每个文件对应一个索引节点</li>
+<li>目录项中只包含文件名、索引节点指针，因此每个目录项的长度大幅减小</li>
+<li>由于目录项长度减小，因此每个磁盘块可以存放更多个目录项，因此检索文件时磁盘I/O的次数就少了很多</li>
+</ul>
+</li>
+</ol>
+<h4 id="4-文件的物理结构（文件的分配方式）"><a href="#4-文件的物理结构（文件的分配方式）" class="headerlink" title="4. 文件的物理结构（文件的分配方式）"></a>4. 文件的物理结构（文件的分配方式）</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>分配方式</th>
+<th>How？</th>
+<th>目录项内容</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>顺序方式</td>
+<td>为文件分配的必须是连续的磁盘块</td>
+<td>起始块号、文件长度</td>
+<td>顺序存取速度快，支持随机访问</td>
+<td>会产生碎片，不利于文件扩展</td>
+</tr>
+<tr>
+<td>隐式链接分配</td>
+<td>除文件的最后一个盘块之外，每个盘块中都存有指向下一个盘块的指针</td>
+<td>起始块号、结束块号</td>
+<td>可解决碎片问题，外存利用率高，文件扩展实现方便</td>
+<td>只能顺序访问，不能随机访问</td>
+</tr>
+<tr>
+<td>显式链接分配</td>
+<td>建立一张文件分配表（FAT），显式记录盘块的先后关系（开机后FAT常驻内存）</td>
+<td>起始块号</td>
+<td>除了拥有隐式链接的优点之外，还可以通过查询内存中的FAT实现随机访问</td>
+<td>FAT需要占用一定的存储空间</td>
+</tr>
+<tr>
+<td>索引分配</td>
+<td>为文件数据块建立索引表。若文件太大，可采用链接方案、多层索引、混合索引</td>
+<td>链接方案记录的是第一个索引块的块号，多层/混合索引记录的是顶级索引块的块号</td>
+<td>支持随机访问，易于实现文件的扩展</td>
+<td>索引表需占用一定的存储空间。访问数据块前需要先读入索引块。若采用链接方案，查找索引块时可能需要很多次读磁盘操作。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="5-文件存储空间管理"><a href="#5-文件存储空间管理" class="headerlink" title="5. 文件存储空间管理"></a>5. 文件存储空间管理</h4><ol>
+<li>存储空间的划分与初始化<ul>
+<li>文件卷（逻辑卷），目录区、文件区的概念</li>
+<li>目录区包含文件目录、空闲表、位示图、超级块等用于文件管理的数据</li>
+</ul>
+</li>
+<li>空闲表法<ul>
+<li>空闲表中记录每个连续空闲区的起始盘块号、盘块数</li>
+<li>分配时可采用首次适应、最佳适应策略；回收时注意表项的合并问题</li>
+</ul>
+</li>
+<li>空闲链表法<ul>
+<li>空闲盘块链<ul>
+<li>以盘块为单位组成一条空闲链</li>
+<li>分配时从链头依次取出空闲块，回收时将空闲块插到链尾</li>
+</ul>
+</li>
+<li>空闲盘区链<ul>
+<li>以盘区为单位组成一条空闲链</li>
+<li>分配时可采用首次适应、最佳适应等策略；回收时注意相邻空闲盘区合并的问题</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>位示图法<ul>
+<li>一个二进制位对应一个盘块。【字号，位号】或【行号，列号】与盘块号一一对应</li>
+<li>重要考点：要能够自己推出盘块号-&gt;【字号，位号】之间的相互转换公式</li>
+<li>需要注意的题目条件<ul>
+<li>二进制位0/1到底哪个代表空闲，哪个代表不空闲</li>
+<li>字号、位号、盘块号到底是从0开始还是从1开始</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>成组链接法：UNIX采用的策略，适合大型文件系统。</li>
+</ol>
+<h4 id="6-文件的基本操作"><a href="#6-文件的基本操作" class="headerlink" title="6. 文件的基本操作"></a>6. 文件的基本操作</h4><ol>
+<li>创建文件：分配外存空间，创建目录项</li>
+<li>删除文件：回收外存空间，删除目录项</li>
+<li>打开文件<ul>
+<li>将目录项中的信息复制到内存中的打开文件表中，并将打开文件表的索引号返回给用户（打开文件时并不会把文件数据直接读入内存。“索引号”也称“文件描述符”）</li>
+<li>打开文件之后，对文件的操作不再需要每次都查询目录，可以根据内存中的打开文件表进行操作</li>
+<li>每个进程都有自己的打开文件表，系统中也有一张总的打开文件表</li>
+<li>进程打开文件表中特有的属性：读写指针、访问权限（只读？读写？）</li>
+<li>系统打开文件表中特有的属性：打开计数器（有多少个进程打开了该文件）</li>
+</ul>
+</li>
+<li>关闭文件<ul>
+<li>将进程打开文件表中的相应表项删除</li>
+<li></li>
+</ul>
+</li>
+<li>读文件</li>
+<li>写文件</li>
+</ol>
+<h4 id="7-文件共享"><a href="#7-文件共享" class="headerlink" title="7. 文件共享"></a>7. 文件共享</h4><h4 id="8-文件保护"><a href="#8-文件保护" class="headerlink" title="8. 文件保护"></a>8. 文件保护</h4><h4 id="9-文件系统的层次结构"><a href="#9-文件系统的层次结构" class="headerlink" title="9. 文件系统的层次结构"></a>9. 文件系统的层次结构</h4><h3 id="二-磁盘组织与管理"><a href="#二-磁盘组织与管理" class="headerlink" title="(二)磁盘组织与管理"></a>(二)磁盘组织与管理</h3><h2 id="五、输入输出（IO）管理"><a href="#五、输入输出（IO）管理" class="headerlink" title="五、输入输出（IO）管理"></a>五、输入输出（IO）管理</h2><h3 id="一-IO管理概述"><a href="#一-IO管理概述" class="headerlink" title="(一)IO管理概述"></a>(一)IO管理概述</h3><h3 id="二-IO核心子系统"><a href="#二-IO核心子系统" class="headerlink" title="(二)IO核心子系统"></a>(二)IO核心子系统</h3>
       
     </div>
     
@@ -1794,7 +2025,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、操作系统概述"><span class="nav-number">1.</span> <span class="nav-text">一、操作系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-操作系统的概念、功能和目标"><span class="nav-number">1.1.</span> <span class="nav-text">1. 操作系统的概念、功能和目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-操作系统的特征"><span class="nav-number">1.2.</span> <span class="nav-text">2. 操作系统的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作系统的发展与分类"><span class="nav-number">1.3.</span> <span class="nav-text">3. 操作系统的发展与分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OS的运行机制和体系结构"><span class="nav-number">1.4.</span> <span class="nav-text">4. OS的运行机制和体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-中断和异常"><span class="nav-number">1.5.</span> <span class="nav-text">5. 中断和异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-系统调用"><span class="nav-number">1.6.</span> <span class="nav-text">6. 系统调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、进程管理"><span class="nav-number">2.</span> <span class="nav-text">二、进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-进程与线程"><span class="nav-number">2.1.</span> <span class="nav-text">(一)进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-进程的定义、组成、组织方式、特征"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 进程的定义、组成、组织方式、特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程的状态与转换"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 进程的状态与转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进程控制"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 进程控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进程通信"><span class="nav-number">2.1.4.</span> <span class="nav-text">4. 进程通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-线程概念和多线程模型"><span class="nav-number">2.1.5.</span> <span class="nav-text">5. 线程概念和多线程模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-处理机调度"><span class="nav-number">2.2.</span> <span class="nav-text">(二)处理机调度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-处理机调度"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. 处理机调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程调度"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 进程调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-调度算法的评价指标"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. 调度算法的评价指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-调度算法（适用于批处理系统）"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. 调度算法（适用于批处理系统）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-调度算法（适用于交互式系统）"><span class="nav-number">2.2.5.</span> <span class="nav-text">5. 调度算法（适用于交互式系统）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-进程同步"><span class="nav-number">2.3.</span> <span class="nav-text">(三)进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-同步、互斥"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 同步、互斥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程互斥的软件实现方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 进程互斥的软件实现方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进程互斥的硬件实现方法"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. 进程互斥的硬件实现方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-信号量机制"><span class="nav-number">2.3.4.</span> <span class="nav-text">4. 信号量机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-用信号量实现进程互斥、同步"><span class="nav-number">2.3.5.</span> <span class="nav-text">5. 用信号量实现进程互斥、同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-信号量相关问题"><span class="nav-number">2.3.6.</span> <span class="nav-text">6. 信号量相关问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-管程（与类的封装特性相似）"><span class="nav-number">2.3.7.</span> <span class="nav-text">7. 管程（与类的封装特性相似）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-死锁"><span class="nav-number">2.4.</span> <span class="nav-text">(四)死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-死锁的概念"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 死锁的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-死锁的处理策略——预防死锁"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 死锁的处理策略——预防死锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-动态策略——避免死锁"><span class="nav-number">2.4.3.</span> <span class="nav-text">3. 动态策略——避免死锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-死锁的检测和解除"><span class="nav-number">2.4.4.</span> <span class="nav-text">4. 死锁的检测和解除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、内存管理"><span class="nav-number">3.</span> <span class="nav-text">三、内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-内存管理概念"><span class="nav-number">3.1.</span> <span class="nav-text">(一)内存管理概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-内存的基础知识"><span class="nav-number">3.1.1.</span> <span class="nav-text">1. 内存的基础知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-内存管理的概念"><span class="nav-number">3.1.2.</span> <span class="nav-text">2. 内存管理的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-覆盖与交换"><span class="nav-number">3.1.3.</span> <span class="nav-text">3. 覆盖与交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-连续分配管理方式"><span class="nav-number">3.1.4.</span> <span class="nav-text">4. 连续分配管理方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-动态分区分配算法"><span class="nav-number">3.1.5.</span> <span class="nav-text">5. 动态分区分配算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-基本分页存储管理的基本概念"><span class="nav-number">3.1.6.</span> <span class="nav-text">6. 基本分页存储管理的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-基本地址变换机构"><span class="nav-number">3.1.7.</span> <span class="nav-text">7. 基本地址变换机构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-具有快表的地址变换机构"><span class="nav-number">3.1.8.</span> <span class="nav-text">8. 具有快表的地址变换机构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-两级页表"><span class="nav-number">3.1.9.</span> <span class="nav-text">9. 两级页表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-基本分段存储管理方式"><span class="nav-number">3.1.10.</span> <span class="nav-text">10. 基本分段存储管理方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-段页式管理方式"><span class="nav-number">3.1.11.</span> <span class="nav-text">11. 段页式管理方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-虚拟内存管理"><span class="nav-number">3.2.</span> <span class="nav-text">(二)虚拟内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-虚拟内存的基本概念"><span class="nav-number">3.2.1.</span> <span class="nav-text">1. 虚拟内存的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-请求分页管理方式"><span class="nav-number">3.2.2.</span> <span class="nav-text">2. 请求分页管理方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-页面置换算法"><span class="nav-number">3.2.3.</span> <span class="nav-text">3. 页面置换算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-页面分配策略"><span class="nav-number">3.2.4.</span> <span class="nav-text">4. 页面分配策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、文件管理"><span class="nav-number">4.</span> <span class="nav-text">四、文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-文件系统基础"><span class="nav-number">4.1.</span> <span class="nav-text">(一)文件系统基础</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-文件系统实现"><span class="nav-number">4.2.</span> <span class="nav-text">(二)文件系统实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-磁盘组织与管理"><span class="nav-number">4.3.</span> <span class="nav-text">(三)磁盘组织与管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、输入输出（IO）管理"><span class="nav-number">5.</span> <span class="nav-text">五、输入输出（IO）管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-IO管理概述"><span class="nav-number">5.1.</span> <span class="nav-text">(一)IO管理概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-IO核心子系统"><span class="nav-number">5.2.</span> <span class="nav-text">(二)IO核心子系统</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、操作系统概述"><span class="nav-number">1.</span> <span class="nav-text">一、操作系统概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-操作系统的概念、功能和目标"><span class="nav-number">1.1.</span> <span class="nav-text">1. 操作系统的概念、功能和目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-操作系统的特征"><span class="nav-number">1.2.</span> <span class="nav-text">2. 操作系统的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-操作系统的发展与分类"><span class="nav-number">1.3.</span> <span class="nav-text">3. 操作系统的发展与分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-OS的运行机制和体系结构"><span class="nav-number">1.4.</span> <span class="nav-text">4. OS的运行机制和体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-中断和异常"><span class="nav-number">1.5.</span> <span class="nav-text">5. 中断和异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-系统调用"><span class="nav-number">1.6.</span> <span class="nav-text">6. 系统调用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、进程管理"><span class="nav-number">2.</span> <span class="nav-text">二、进程管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-进程与线程"><span class="nav-number">2.1.</span> <span class="nav-text">(一)进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-进程的定义、组成、组织方式、特征"><span class="nav-number">2.1.1.</span> <span class="nav-text">1. 进程的定义、组成、组织方式、特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程的状态与转换"><span class="nav-number">2.1.2.</span> <span class="nav-text">2. 进程的状态与转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进程控制"><span class="nav-number">2.1.3.</span> <span class="nav-text">3. 进程控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-进程通信"><span class="nav-number">2.1.4.</span> <span class="nav-text">4. 进程通信</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-线程概念和多线程模型"><span class="nav-number">2.1.5.</span> <span class="nav-text">5. 线程概念和多线程模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-处理机调度"><span class="nav-number">2.2.</span> <span class="nav-text">(二)处理机调度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-处理机调度"><span class="nav-number">2.2.1.</span> <span class="nav-text">1. 处理机调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程调度"><span class="nav-number">2.2.2.</span> <span class="nav-text">2. 进程调度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-调度算法的评价指标"><span class="nav-number">2.2.3.</span> <span class="nav-text">3. 调度算法的评价指标</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-调度算法（适用于批处理系统）"><span class="nav-number">2.2.4.</span> <span class="nav-text">4. 调度算法（适用于批处理系统）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-调度算法（适用于交互式系统）"><span class="nav-number">2.2.5.</span> <span class="nav-text">5. 调度算法（适用于交互式系统）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-进程同步"><span class="nav-number">2.3.</span> <span class="nav-text">(三)进程同步</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-同步、互斥"><span class="nav-number">2.3.1.</span> <span class="nav-text">1. 同步、互斥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-进程互斥的软件实现方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">2. 进程互斥的软件实现方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-进程互斥的硬件实现方法"><span class="nav-number">2.3.3.</span> <span class="nav-text">3. 进程互斥的硬件实现方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-信号量机制"><span class="nav-number">2.3.4.</span> <span class="nav-text">4. 信号量机制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-用信号量实现进程互斥、同步"><span class="nav-number">2.3.5.</span> <span class="nav-text">5. 用信号量实现进程互斥、同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-信号量相关问题"><span class="nav-number">2.3.6.</span> <span class="nav-text">6. 信号量相关问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-管程（与类的封装特性相似）"><span class="nav-number">2.3.7.</span> <span class="nav-text">7. 管程（与类的封装特性相似）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-死锁"><span class="nav-number">2.4.</span> <span class="nav-text">(四)死锁</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-死锁的概念"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 死锁的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-死锁的处理策略——预防死锁"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 死锁的处理策略——预防死锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-动态策略——避免死锁"><span class="nav-number">2.4.3.</span> <span class="nav-text">3. 动态策略——避免死锁</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-死锁的检测和解除"><span class="nav-number">2.4.4.</span> <span class="nav-text">4. 死锁的检测和解除</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、内存管理"><span class="nav-number">3.</span> <span class="nav-text">三、内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-内存管理概念"><span class="nav-number">3.1.</span> <span class="nav-text">(一)内存管理概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-内存的基础知识"><span class="nav-number">3.1.1.</span> <span class="nav-text">1. 内存的基础知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-内存管理的概念"><span class="nav-number">3.1.2.</span> <span class="nav-text">2. 内存管理的概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-覆盖与交换"><span class="nav-number">3.1.3.</span> <span class="nav-text">3. 覆盖与交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-连续分配管理方式"><span class="nav-number">3.1.4.</span> <span class="nav-text">4. 连续分配管理方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-动态分区分配算法"><span class="nav-number">3.1.5.</span> <span class="nav-text">5. 动态分区分配算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-基本分页存储管理的基本概念"><span class="nav-number">3.1.6.</span> <span class="nav-text">6. 基本分页存储管理的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-基本地址变换机构"><span class="nav-number">3.1.7.</span> <span class="nav-text">7. 基本地址变换机构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-具有快表的地址变换机构"><span class="nav-number">3.1.8.</span> <span class="nav-text">8. 具有快表的地址变换机构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-两级页表"><span class="nav-number">3.1.9.</span> <span class="nav-text">9. 两级页表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10-基本分段存储管理方式"><span class="nav-number">3.1.10.</span> <span class="nav-text">10. 基本分段存储管理方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11-段页式管理方式"><span class="nav-number">3.1.11.</span> <span class="nav-text">11. 段页式管理方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-虚拟内存管理"><span class="nav-number">3.2.</span> <span class="nav-text">(二)虚拟内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-虚拟内存的基本概念"><span class="nav-number">3.2.1.</span> <span class="nav-text">1. 虚拟内存的基本概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-请求分页管理方式"><span class="nav-number">3.2.2.</span> <span class="nav-text">2. 请求分页管理方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-页面置换算法"><span class="nav-number">3.2.3.</span> <span class="nav-text">3. 页面置换算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-页面分配策略"><span class="nav-number">3.2.4.</span> <span class="nav-text">4. 页面分配策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、文件管理"><span class="nav-number">4.</span> <span class="nav-text">四、文件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-文件系统"><span class="nav-number">4.1.</span> <span class="nav-text">(一)文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-初识文件管理"><span class="nav-number">4.1.1.</span> <span class="nav-text">1. 初识文件管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-文件的逻辑结构"><span class="nav-number">4.1.2.</span> <span class="nav-text">2. 文件的逻辑结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-文件目录"><span class="nav-number">4.1.3.</span> <span class="nav-text">3. 文件目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-文件的物理结构（文件的分配方式）"><span class="nav-number">4.1.4.</span> <span class="nav-text">4. 文件的物理结构（文件的分配方式）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-文件存储空间管理"><span class="nav-number">4.1.5.</span> <span class="nav-text">5. 文件存储空间管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-文件的基本操作"><span class="nav-number">4.1.6.</span> <span class="nav-text">6. 文件的基本操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-文件共享"><span class="nav-number">4.1.7.</span> <span class="nav-text">7. 文件共享</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-文件保护"><span class="nav-number">4.1.8.</span> <span class="nav-text">8. 文件保护</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9-文件系统的层次结构"><span class="nav-number">4.1.9.</span> <span class="nav-text">9. 文件系统的层次结构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-磁盘组织与管理"><span class="nav-number">4.2.</span> <span class="nav-text">(二)磁盘组织与管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、输入输出（IO）管理"><span class="nav-number">5.</span> <span class="nav-text">五、输入输出（IO）管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-IO管理概述"><span class="nav-number">5.1.</span> <span class="nav-text">(一)IO管理概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-IO核心子系统"><span class="nav-number">5.2.</span> <span class="nav-text">(二)IO核心子系统</span></a></li></ol></li></ol></div>
             
 
           </div>
