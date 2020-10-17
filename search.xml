@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[信息熵是什么]]></title>
+    <url>%2F2020%2F10%2F17%2F%E4%BF%A1%E6%81%AF%E7%86%B5%E6%98%AF%E4%BB%80%E4%B9%88%2F</url>
+    <content type="text"><![CDATA[信息熵是什么？在西瓜书里看到决策树那一章时有这么一个概念：信息熵。 书里直接给出了定义：“信息熵”（information entropy）是度量样本集合纯度最常用的一种指标。假定当前样本集合$D$中第$k$类样本所占的比例为$p_k(k=1,2,…,|y|)$，则$D$的信息熵定义为 Ent(D)=-\sum^{|y|}_{k=1}p_klog_2p_k$Ent(D)$的值越小，则$D$的纯度越高。 计算信息熵时的约定：若$p=0$，则$plog_2p=0$ $Ent(D)$的最小值为$0$，最大值为$log_2|y|$ 书中没有给出熵的定义的由来（感觉没有必要，不然篇幅太长了），后来在知乎上看到信息熵是什么？ - YJango的回答 - 知乎，解释的非常清晰。 知乎的回答是视频形式的，这里简单的总结一下： 信息熵是度量事件的不确定性的 消除熵=获取信息，信息与熵数量相等，意义相反 可以把抛掷一枚硬币看成是1bit的熵，那么所有事件的信息熵都可以看成抛掷多少枚硬币的量 比如一道题有ABCD四个选项（正确答案是C），那么这个问题相当于抛掷两枚硬币，熵是$log_24=2bit$，那么当我知道C有50%的可能是正确答案时，此时的熵又是多少？ 此时对于我而言，ABCD是正确答案的概率分别是$\frac{1}{6},\frac{1}{6},\frac{1}{2},\frac{1}{6}$，此时的熵可以看成是四个选项的信息量乘以他们各自的发生概率的总和，那么怎么求A的信息量呢？ 我们知道，概率为$\frac{1}{6}$的事件相当于有6个等概率的事，发生了其中一个事件的值，那么就要求抛掷多少枚硬币会有6种等概率的情况发生呢？显然是$log_26$。 所以，此时这道题的信息量为$\frac{1}{6}log_26+\frac{1}{6}log_26+\frac{1}{2}log_22+\frac{1}{6}log_26=1.79bit$ 所以，“C有50%的可能是正确答案”这条信息给我提供的信息量就是$2-1.79=0.21bit$ 这时候我们就可以得出熵的定义式 Ent(D)=\sum^{|y|}_{k=1}p_klog_2\frac{1}{p_k}=-\sum^{|y|}_{k=1}p_klog_2p_k]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>信息熵</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[线性代数知识点复习]]></title>
+    <url>%2F2020%2F09%2F23%2F%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E7%9F%A5%E8%AF%86%E7%82%B9%E5%A4%8D%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[$tr$代表迹（trace），是方阵对角线元素之和，满足性质：对尺寸相同的矩阵A，B，$tr(A^TB)=\sum{i,j}A{ij}B_{ij}$，即$tr(A^TB)$是矩阵A，B的 内积]]></content>
+      <categories>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>线代</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[337.打家劫舍III]]></title>
     <url>%2F2020%2F08%2F05%2F337-%E6%89%93%E5%AE%B6%E5%8A%AB%E8%88%8DIII%2F</url>
     <content type="text"><![CDATA[题目链接337.打家劫舍III 题目描述在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。 计算在不触动警报的情况下，小偷一晚能够盗取的最高金额。 样例1234567891011示例1:输入: [3,2,3,null,3,null,1] 3 / \ 2 3 \ \ 3 1输出: 7 解释: 小偷一晚能够盗取的最高金额 = 3 + 3 + 1 = 7. 1234567891011示例2:输入: [3,4,5,1,3,null,1] 3 / \ 4 5 / \ \ 1 3 1输出: 9解释: 小偷一晚能够盗取的最高金额 = 4 + 5 = 9. 解题思路从题目描述中我们大概可以猜到这是一个动态规划的题，但是这是在树上的动归，可以用深搜的方法来解决。我们可以定义两个数组： f[o]代表选中当前节点的最大值 g[o]代表不选当前节点的最大值 那么我们可以得到转移方程就是： f[o] = o-&gt;val + g[o-&gt;left] + g[o-&gt;right] 因为不能偷两家相邻的节点，所以如果偷了当前节点，就不能偷他的左右儿子节点 g[o] = max(f[o-&gt;left], g[o-&gt;left]) + max(f[o-&gt;right], g[o-&gt;right]) 如果不偷当前这家，就可以偷他的左右儿子，但也可以不偷，选择更优的的结果。 代码12345678910111213141516171819class Solution &#123;public: unordered_map&lt;TreeNode*, int&gt; f,g; int rob(TreeNode* root) &#123; dfs(root); return max(f[root], g[root]); &#125; void dfs(TreeNode* o) &#123; if(!o) return; dfs(o-&gt;left); dfs(o-&gt;right); f[o]=o-&gt;val+g[o-&gt;left]+g[o-&gt;right]; g[o]=max(f[o-&gt;left], g[o-&gt;left])+max(f[o-&gt;right], g[o-&gt;right]); &#125;&#125;;]]></content>
@@ -50,7 +72,7 @@
   <entry>
     <title><![CDATA[常用快捷键&命令]]></title>
     <url>%2F2020%2F07%2F21%2F%E7%B3%BB%E7%BB%9F%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%26%E5%91%BD%E4%BB%A4%2F</url>
-    <content type="text"><![CDATA[[TOC] mac常用快捷键一、系统快捷键 组合键 功能 Command Q 关闭当前软件 Command W 关闭当前窗口 Command M 当前窗口最小化 Command H 隐藏当前窗口 Command C 复制 Command Option V 剪切 Command Control Q 锁屏 Command Control F 全屏 Command Shift . 显示/隐藏 隐藏文件 Control Option T 打开终端 Command shift 5 截屏/录屏 Command shift 3 保存截屏(全屏)到桌面 Command control shift 3 复制截屏(全屏)到剪切板 Command shift 4 保存截屏(所选区域)到桌面 Command control shift 4 复制截屏(所选区域)到剪切板 Control Shift X 使用Keka解压 Control Shift C 使用Keka压缩 Control 右方向键 切换到下一个窗口 Command Option 空格 打开访达搜索 Command Shift O 前往文稿 Command Shift D 前往桌面 Command Option L 前往下载 Command I 显示简介 Command L 定位查单词 Command Control 空格 调出emoji表情 暂无快捷键，控制颜色 § 二、QQ 组合键 功能 Command Control A 截屏 Command Control R 录屏 Command Control G 打开搜索框 Command Control Z 打开未读消息 Command Control O 识别屏幕文字 三、Chrome 组合键 功能 Command Shift N 打开新的无痕窗口 Command Shift T 重新打开关闭的标签页 Command Shift B 隐藏/显示书签栏 Command Shift W 关闭当前窗口 Control Shift Tab 切换到上一个标签页 Control Tab 切换到下一个标签页 Command R 刷新该页面 Command N 打开新的窗口 Command T 新建标签页 Command W 关闭当前标签页 四、Typora 组合键 功能 Command Shift Delete 删除当前行 Command / 切换源码模式 五、Sublime Text 组合键 功能 Control Shift K 删除当前行 Command Shift D 复制当前行并粘贴 六、IntelliJ IDEA 快捷键 功能 Option F7 可以获得当前类的子类等信息，相当于右键类名，然后选择“Find Usages” Control Option O 删除无用的包的import Control O 插入@Override的方法 Windows常用快捷键一、系统 组合键 功能 win L 锁屏 win S 搜索 Linux &amp; MacOS 常用指令一、系统 命令 功能 uptime 显示运行时间 kill -9 &lt;进程号&gt; 强制杀死该进程 lsof -i:&lt;端口号&gt; 查看该端口的详细信息 ssh user@host 远程连接 sudo shutdown -h now 立刻关机 sudo shutdown -r now 立刻重启 二、screen 命令 功能 screen -S SESSION 创建一个新的会话 screen -ls 列出当前所有的session screen -r SESSION 回到SESSION这个会话 screen -d SESSION detach这个session screen -X -S SESSION quit 杀死SESSION]]></content>
+    <content type="text"><![CDATA[[TOC] mac常用快捷键一、系统快捷键 组合键 功能 Command Q 关闭当前软件 Command W 关闭当前窗口 Command M 当前窗口最小化 Command H 隐藏当前窗口 Command C 复制 Command Option V 剪切 Command Control Q 锁屏 Command Control F 全屏 Command Shift . 显示/隐藏 隐藏文件 Control Option T 打开终端 Command shift 5 截屏/录屏 Command shift 3 保存截屏(全屏)到桌面 Command control shift 3 复制截屏(全屏)到剪切板 Command shift 4 保存截屏(所选区域)到桌面 Command control shift 4 复制截屏(所选区域)到剪切板 Control Shift X 使用Keka解压 Control Shift C 使用Keka压缩 Control 右方向键 切换到下一个窗口 Command Option 空格 打开访达搜索 Command Shift O 前往文稿 Command Shift D 前往桌面 Command Option L 前往下载 Command I 显示简介 Command L 定位查单词 Command Control 空格 调出emoji表情 暂无快捷键，控制颜色 § 二、QQ 组合键 功能 Command Control A 截屏 Command Control R 录屏 Command Control G 打开搜索框 Command Control Z 打开未读消息 Command Control O 识别屏幕文字 三、Chrome 组合键 功能 Command Shift N 打开新的无痕窗口 Command Shift T 重新打开关闭的标签页 Command Shift B 隐藏/显示书签栏 Command Shift W 关闭当前窗口 Control Shift Tab 切换到上一个标签页 Control Tab 切换到下一个标签页 Command R 刷新该页面 Command N 打开新的窗口 Command T 新建标签页 Command W 关闭当前标签页 四、Typora 组合键 功能 Command Shift Delete 删除当前行 Command / 切换源码模式 五、Sublime Text 组合键 功能 Control Shift K 删除当前行 Command Shift D 复制当前行并粘贴 六、IntelliJ IDEA 快捷键 功能 Option F7 可以获得当前类的子类等信息，相当于右键类名，然后选择“Find Usages” Control Option O 删除无用的包的import Control O 插入@Override的方法 七、PyCharm 快捷键 功能 Command Y 删除光标所在行 Command 右方向键 跳到行尾 Command 左方向键 跳到行首 Windows常用快捷键一、系统 组合键 功能 win L 锁屏 win S 搜索 Linux &amp; MacOS 常用指令一、系统 命令 功能 uptime 显示运行时间 kill -9 &lt;进程号&gt; 强制杀死该进程 lsof -i:&lt;端口号&gt; 查看该端口的详细信息 ssh user@host 远程连接 sudo shutdown -h now 立刻关机 sudo shutdown -r now 立刻重启 二、screen 命令 功能 screen -S SESSION 创建一个新的会话 screen -ls 列出当前所有的session screen -r SESSION 回到SESSION这个会话 screen -d SESSION detach这个session screen -X -S SESSION quit 杀死SESSION]]></content>
       <tags>
         <tag>macos</tag>
         <tag>linux</tag>
@@ -67,17 +89,6 @@
       <tags>
         <tag>动态规划</tag>
         <tag>滚动数组优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[华为面经]]></title>
-    <url>%2F2020%2F07%2F18%2F%E5%8D%8E%E4%B8%BA%E9%9D%A2%E7%BB%8F%2F</url>
-    <content type="text"><![CDATA[数据结构 链表和数组的优缺点 链表 优点： 便于插入和删除 内存利用率高，不会浪费内存 大小没有固定，扩展很灵活 缺点：不能随机查找，查找元素和修改单个元素慢 数组 优点：便于随机存取，查找快，修改快 缺点： 不方便插入和删除元素 内存空间要求高，必须有足够的连续内存空间 数组大小固定，不能动态扩展 栈和队列的区别 栈：先进后出，后进先出 队列：先进先出 二叉树的遍历算法如何实现的 递归 迭代 二叉树的深度怎么算的$log_2N$ 图和二叉树的区别 图的遍历算法怎么实现的 dfs bfs 快排怎么实现的，是否是稳定的，时间复杂度 稳定，复杂度： $nlogn$ 树的遍历方法。 前序遍历 中序遍历 后序遍历 层序遍历（要用到队列） 讲一下B-树 B-树、B+树以及B*树的原理详解 什么是完全二叉树？ 满二叉树、完全二叉树、平衡二叉树、最优二叉树 计算机网络 tcp/ip的网络分层，tcp属于哪一层 tcp协议的建立过程 tcp和udp的区别 ISO七层模型每一层分别是做什么，与TCP/IP模型有什么区别 网络拥塞的内容 介绍TCP/IP模型 TCP和IP协议 TCP三次握手，四次挥手。 ISO分层的原因，好处 操作系统 32位操作系统，8G内存。为什么实际只有4G？ 32位寻址空间只有32位，就是 $2^{32}=2^{22}K=2^{12}M=2^{2}G=4G$ 详解 每个进程为什么分配了4G内存？ 了解LINUX内核吗 C++ c++内存管理（内存分为哪些区域、指针存在什么地方、堆和栈里面存放什么） 多态的实现？ C的static 手写代码 判断链表是否有环 1到1000中数字含有的9的个数。 两个单链表怎么判断相交。 其他 介绍自己的做过的项目，自己在其中的角色，是如何去实现的 问课题 问项目 拓展开来 设计模式，用到过哪些，是怎么解耦的,别说单例]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -173,6 +184,11 @@
         <tag>Mod</tag>
         <tag>Forge</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python知识点小结]]></title>
+    <url>%2F2018%2F10%2F10%2Fpython%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[[TOC] 49. 字典 核心底层原理 内存分析 查找值对象过程字典用法总结： 键必须可散列。 数字、字符串、元组，都是可散列的 自定义对象需要支持下面三点： 支持hash()函数 支持通过__eq__()的方法检测相等性 若a==b为真，则hash(a)==hash(b)也为真 字典在内存中开销巨大，典型的空间换时间。 键查询速度很快。 往字典里面添加新键可能导致扩容，导致散列表中键的次序变化。因此，不要在遍历字典的同时进行字典的修改。 50. 集合 特点 创建和删除 交并差运算 集合的特点 集合无序可变，元素不能重复。实际上，集合底层是字典实现，集合的所有元素都是字典中的“键对象”，因此是不能重复且唯一的。 集合的创建和删除 使用{}创建集合对象，并使用add()方法添加元素 使用set()，将列表、元组等可迭代对象转成集合。如果原来数据存在重复数据，则只保留一个 remove()删除指定元素； clear()整个集合 集合相关操作 并：a|b 或 a.union(b) 交：a&amp;b 或 a.intersection(b) 差：a-b 或 a.difference(b)]]></content>
   </entry>
   <entry>
     <title><![CDATA[Java命名规范]]></title>
