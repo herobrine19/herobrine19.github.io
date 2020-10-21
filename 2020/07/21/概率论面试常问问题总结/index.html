@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="en-US">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="面试,概率论,">
+  <meta name="keywords" content="概率论,">
 
 
 
@@ -87,14 +87,14 @@
 
 
 <meta name="description" content="给你一副52张扑克牌发给4个人，其中一个人同时拿到红桃A和黑桃A的概率是多少？  首先选定一个人拿红桃A和黑桃A，即$C_4^1=4$  然后这个人从剩下的50张牌里拿11张(每人13张牌)，即$C_{50}^{11}$  然后剩下的三个人每人从牌堆里拿13张，就是$ C{39}^{13}C{26}^{13}C_{13}^{13} $  四个人每人13张牌的情况总数为：$ C{52}^{13}C">
-<meta name="keywords" content="面试,概率论">
+<meta name="keywords" content="概率论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="概率论面试常问问题总结">
 <meta property="og:url" content="http://herobrine.site/2020/07/21/概率论面试常问问题总结/index.html">
 <meta property="og:site_name" content="Herobrine">
 <meta property="og:description" content="给你一副52张扑克牌发给4个人，其中一个人同时拿到红桃A和黑桃A的概率是多少？  首先选定一个人拿红桃A和黑桃A，即$C_4^1=4$  然后这个人从剩下的50张牌里拿11张(每人13张牌)，即$C_{50}^{11}$  然后剩下的三个人每人从牌堆里拿13张，就是$ C{39}^{13}C{26}^{13}C_{13}^{13} $  四个人每人13张牌的情况总数为：$ C{52}^{13}C">
-<meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-07-24T17:08:14.307Z">
+<meta property="og:locale" content="en-US">
+<meta property="og:updated_time" content="2020-10-21T02:30:26.515Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="概率论面试常问问题总结">
 <meta name="twitter:description" content="给你一副52张扑克牌发给4个人，其中一个人同时拿到红桃A和黑桃A的概率是多少？  首先选定一个人拿红桃A和黑桃A，即$C_4^1=4$  然后这个人从剩下的50张牌里拿11张(每人13张牌)，即$C_{50}^{11}$  然后剩下的三个人每人从牌堆里拿13张，就是$ C{39}^{13}C{26}^{13}C_{13}^{13} $  四个人每人13张牌的情况总数为：$ C{52}^{13}C">
@@ -113,7 +113,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -145,7 +145,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en-US">
 
   
   
@@ -195,7 +195,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            Home
           </a>
         </li>
       
@@ -205,7 +205,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -215,7 +215,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            分类
+            Categories
           </a>
         </li>
       
@@ -225,7 +225,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -238,7 +238,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
-            搜索
+            Search
           </a>
         </li>
       
@@ -257,7 +257,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -321,9 +321,9 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-21T20:20:26+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-21T20:20:26+08:00">
                 2020-07-21
               </time>
             
@@ -342,12 +342,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数学/" itemprop="url" rel="index">
-                    <span itemprop="name">数学</span>
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematics</span>
                   </a>
                 </span>
 
@@ -379,9 +379,9 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
+                <span title="Words count in article">
                   551 字
                 </span>
               
@@ -395,9 +395,9 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="Reading time">
                   2 分钟
                 </span>
               
@@ -476,8 +476,6 @@ P=\frac{1}{2}+\frac{1}{8}+\frac{1}{32}+...\frac{1}{2}·(\frac{1}{4})^{n-1}+...=\
       
         <div class="post-tags">
           
-            <a href="/tags/面试/" rel="tag"># 面试</a>
-          
             <a href="/tags/概率论/" rel="tag"># 概率论</a>
           
         </div>
@@ -506,8 +504,8 @@ P=\frac{1}{2}+\frac{1}{8}+\frac{1}{32}+...\frac{1}{2}·(\frac{1}{4})^{n-1}+...=\
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/21/系统常用快捷键&命令/" rel="next" title="常用快捷键&命令">
-                <i class="fa fa-chevron-left"></i> 常用快捷键&命令
+              <a href="/2020/07/18/97-交错字符串/" rel="next" title="97.交错字符串">
+                <i class="fa fa-chevron-left"></i> 97.交错字符串
               </a>
             
           </div>
@@ -593,8 +591,8 @@ P=\frac{1}{2}+\frac{1}{8}+\frac{1}{32}+...\frac{1}{2}·(\frac{1}{4})^{n-1}+...=\
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -604,8 +602,8 @@ P=\frac{1}{2}+\frac{1}{8}+\frac{1}{32}+...\frac{1}{2}·(\frac{1}{4})^{n-1}+...=\
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
               </div>
             
@@ -615,8 +613,8 @@ P=\frac{1}{2}+\frac{1}{8}+\frac{1}{32}+...\frac{1}{2}·(\frac{1}{4})^{n-1}+...=\
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -625,22 +623,6 @@ P=\frac{1}{2}+\frac{1}{8}+\frac{1}{32}+...\frac{1}{2}·(\frac{1}{4})^{n-1}+...=\
 
           
 
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/herobrine19" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-            </div>
           
 
           
@@ -678,7 +660,7 @@ P=\frac{1}{2}+\frac{1}{8}+\frac{1}{32}+...\frac{1}{2}·(\frac{1}{4})^{n-1}+...=\
 </div>
 
 <!--
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -686,7 +668,7 @@ P=\frac{1}{2}+\frac{1}{8}+\frac{1}{32}+...\frac{1}{2}·(\frac{1}{4})^{n-1}+...=\
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 -->
 
 

@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-Hans">
+<html class="theme-next gemini use-motion" lang="en-US">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -90,7 +90,7 @@
 <meta property="og:title" content="Herobrine">
 <meta property="og:url" content="http://herobrine.site/index.html">
 <meta property="og:site_name" content="Herobrine">
-<meta property="og:locale" content="zh-Hans">
+<meta property="og:locale" content="en-US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Herobrine">
 
@@ -108,7 +108,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: '博主'
+      author: 'Author'
     },
     algolia: {
       applicationID: '',
@@ -140,7 +140,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en-US">
 
   
   
@@ -191,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            首页
+            Home
           </a>
         </li>
       
@@ -201,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
             
-            标签
+            Tags
           </a>
         </li>
       
@@ -211,7 +211,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            分类
+            Categories
           </a>
         </li>
       
@@ -221,7 +221,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            归档
+            Archives
           </a>
         </li>
       
@@ -234,7 +234,7 @@
             
               <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
             
-            搜索
+            Search
           </a>
         </li>
       
@@ -253,7 +253,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://herobrine.site/2020/10/17/信息熵是什么/">
+    <link itemprop="mainEntityOfPage" href="http://herobrine.site/2020/10/18/决策树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dajinge">
@@ -309,7 +309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/10/17/信息熵是什么/" itemprop="url">信息熵是什么</a></h1>
+                <a class="post-title-link" href="/2020/10/18/决策树/" itemprop="url">决策树</a></h1>
         
 
         <div class="post-meta">
@@ -319,10 +319,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-10-17T20:38:38+08:00">
-                2020-10-17
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-18T10:25:54+08:00">
+                2020-10-18
               </time>
             
 
@@ -340,12 +340,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Machine Learning</span>
+                  <a href="/categories/AI/" itemprop="url" rel="index">
+                    <span itemprop="name">AI</span>
                   </a>
                 </span>
 
@@ -372,10 +372,10 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
-                  582 字
+                <span title="Words count in article">
+                  1k 字
                 </span>
               
 
@@ -388,10 +388,10 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
-                  2 分钟
+                <span title="Reading time">
+                  3 分钟
                 </span>
               
             </div>
@@ -414,13 +414,12 @@
       
         
           
-          信息熵是什么？在西瓜书里看到决策树那一章时有这么一个概念：信息熵。
-书里直接给出了定义：“信息熵”（
+          （看完了西瓜书决策树(decision trees)这一章，简单的做一下总结，理论参考了《机器学习》
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/10/17/信息熵是什么/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2020/10/18/决策树/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -470,7 +469,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://herobrine.site/2020/09/23/线性代数知识点复习/">
+    <link itemprop="mainEntityOfPage" href="http://herobrine.site/2020/10/17/信息熵是什么/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="dajinge">
@@ -489,7 +488,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2020/09/23/线性代数知识点复习/" itemprop="url">线性代数知识点复习</a></h1>
+                <a class="post-title-link" href="/2020/10/17/信息熵是什么/" itemprop="url">信息熵是什么</a></h1>
         
 
         <div class="post-meta">
@@ -499,10 +498,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-09-23T18:54:37+08:00">
-                2020-09-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-10-17T20:38:38+08:00">
+                2020-10-17
               </time>
             
 
@@ -520,12 +519,12 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数学/" itemprop="url" rel="index">
-                    <span itemprop="name">数学</span>
+                  <a href="/categories/AI/" itemprop="url" rel="index">
+                    <span itemprop="name">AI</span>
                   </a>
                 </span>
 
@@ -552,10 +551,10 @@
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
-                  51 字
+                <span title="Words count in article">
+                  582 字
                 </span>
               
 
@@ -568,10 +567,10 @@
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
-                  1 分钟
+                <span title="Reading time">
+                  2 分钟
                 </span>
               
             </div>
@@ -594,13 +593,13 @@
       
         
           
-          
-$tr$代表迹（trace），是方阵对角线元素之和，满足性质：对尺寸相同的矩阵A，B，$tr(A^
+          信息熵是什么？在西瓜书里看到决策树那一章时有这么一个概念：信息熵。
+书里直接给出了定义：“信息熵”（
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2020/09/23/线性代数知识点复习/#more" rel="contents">
-              阅读全文 &raquo;
+            <a class="btn" href="/2020/10/17/信息熵是什么/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -679,9 +678,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-08-05T09:56:01+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-05T09:56:01+08:00">
                 2020-08-05
               </time>
             
@@ -700,7 +699,7 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -732,9 +731,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
+                <span title="Words count in article">
                   530 字
                 </span>
               
@@ -748,9 +747,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="Reading time">
                   2 分钟
                 </span>
               
@@ -780,7 +779,7 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/08/05/337-打家劫舍III/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -859,9 +858,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-28T11:53:32+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-28T11:53:32+08:00">
                 2020-07-28
               </time>
             
@@ -880,12 +879,12 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/计算机网络/" itemprop="url" rel="index">
-                    <span itemprop="name">计算机网络</span>
+                  <a href="/categories/Computer-Network/" itemprop="url" rel="index">
+                    <span itemprop="name">Computer Network</span>
                   </a>
                 </span>
 
@@ -912,9 +911,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
+                <span title="Words count in article">
                   361 字
                 </span>
               
@@ -928,9 +927,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="Reading time">
                   1 分钟
                 </span>
               
@@ -960,7 +959,7 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/28/计网复习重点/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1039,9 +1038,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-23T21:20:39+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-23T21:20:39+08:00">
                 2020-07-23
               </time>
             
@@ -1060,12 +1059,12 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/操作系统/" itemprop="url" rel="index">
-                    <span itemprop="name">操作系统</span>
+                  <a href="/categories/OS/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
                   </a>
                 </span>
 
@@ -1092,9 +1091,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
+                <span title="Words count in article">
                   13.2k 字
                 </span>
               
@@ -1108,9 +1107,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="Reading time">
                   44 分钟
                 </span>
               
@@ -1142,7 +1141,7 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/23/操作系统复习重点/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1221,9 +1220,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-21T20:20:26+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-21T20:20:26+08:00">
                 2020-07-21
               </time>
             
@@ -1242,12 +1241,12 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数学/" itemprop="url" rel="index">
-                    <span itemprop="name">数学</span>
+                  <a href="/categories/Mathematics/" itemprop="url" rel="index">
+                    <span itemprop="name">Mathematics</span>
                   </a>
                 </span>
 
@@ -1274,9 +1273,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
+                <span title="Words count in article">
                   551 字
                 </span>
               
@@ -1290,9 +1289,9 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="Reading time">
                   2 分钟
                 </span>
               
@@ -1324,176 +1323,7 @@ $tr$代表迹（trace），是方阵对角线元素之和，满足性质：对�
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/21/概率论面试常问问题总结/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://herobrine.site/2020/07/21/系统常用快捷键&命令/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="dajinge">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/herobrine.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Herobrine">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/07/21/系统常用快捷键&命令/" itemprop="url">常用快捷键&命令</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-21T12:17:44+08:00">
-                2020-07-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  674 字
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2 分钟
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          [TOC]
-mac常用快捷键一、系统快捷键
-
-
-
-组合键
-功能
-
-
-
-
-Command  Q
-关闭当
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/07/21/系统常用快捷键&命令/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1572,9 +1402,9 @@ Command  Q
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-18T18:32:01+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-18T18:32:01+08:00">
                 2020-07-18
               </time>
             
@@ -1593,7 +1423,7 @@ Command  Q
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1625,9 +1455,9 @@ Command  Q
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
+                <span title="Words count in article">
                   807 字
                 </span>
               
@@ -1641,9 +1471,9 @@ Command  Q
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="Reading time">
                   4 分钟
                 </span>
               
@@ -1673,7 +1503,7 @@ Command  Q
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/18/97-交错字符串/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1752,9 +1582,9 @@ Command  Q
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-16T18:58:01+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-16T18:58:01+08:00">
                 2020-07-16
               </time>
             
@@ -1773,7 +1603,7 @@ Command  Q
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1805,9 +1635,9 @@ Command  Q
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
+                <span title="Words count in article">
                   582 字
                 </span>
               
@@ -1821,9 +1651,9 @@ Command  Q
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="Reading time">
                   2 分钟
                 </span>
               
@@ -1853,7 +1683,7 @@ Command  Q
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/16/96-不同的二叉搜索树/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -1932,9 +1762,9 @@ Command  Q
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">发表于</span>
+                <span class="post-meta-item-text">Posted on</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-16T10:08:02+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-16T10:08:02+08:00">
                 2020-07-16
               </time>
             
@@ -1953,7 +1783,7 @@ Command  Q
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">分类于</span>
+                <span class="post-meta-item-text">In</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -1985,9 +1815,9 @@ Command  Q
                   <i class="fa fa-file-word-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">字数统计&#58;</span>
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
                 
-                <span title="字数统计">
+                <span title="Words count in article">
                   1.3k 字
                 </span>
               
@@ -2001,9 +1831,9 @@ Command  Q
                   <i class="fa fa-clock-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="阅读时长">
+                <span title="Reading time">
                   5 分钟
                 </span>
               
@@ -2034,7 +1864,186 @@ Command  Q
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/07/16/785-判断二分图/#more" rel="contents">
-              阅读全文 &raquo;
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://herobrine.site/2020/07/15/计算机启动的过程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="dajinge">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/herobrine.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Herobrine">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/07/15/计算机启动的过程/" itemprop="url">计算机启动的过程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-15T22:12:22+08:00">
+                2020-07-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/OS/" itemprop="url" rel="index">
+                    <span itemprop="name">OS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  0 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          
+          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/07/15/计算机启动的过程/#more" rel="contents">
+              Read more &raquo;
             </a>
           </div>
           <!--/noindex-->
@@ -2123,8 +2132,8 @@ Command  Q
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
-                  <span class="site-state-item-name">日志</span>
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">posts</span>
                 </a>
               </div>
             
@@ -2134,8 +2143,8 @@ Command  Q
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">12</span>
-                  <span class="site-state-item-name">分类</span>
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">categories</span>
                 </a>
               </div>
             
@@ -2145,8 +2154,8 @@ Command  Q
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">26</span>
-                  <span class="site-state-item-name">标签</span>
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">tags</span>
                 </a>
               </div>
             
@@ -2155,22 +2164,6 @@ Command  Q
 
           
 
-          
-            <div class="links-of-author motion-element">
-                
-                  <span class="links-of-author-item">
-                    <a href="https://github.com/herobrine19" target="_blank" title="GitHub">
-                      
-                        <i class="fa fa-fw fa-github"></i>GitHub</a>
-                  </span>
-                
-                  <span class="links-of-author-item">
-                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
-                      
-                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                  </span>
-                
-            </div>
           
 
           
@@ -2208,7 +2201,7 @@ Command  Q
 </div>
 
 <!--
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -2216,7 +2209,7 @@ Command  Q
 
 
 
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 -->
 
 
